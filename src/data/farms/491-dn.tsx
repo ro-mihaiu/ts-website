@@ -14,16 +14,6 @@ export const farm: FarmData = {
   author: "TheySix",
   date: "2025-10-05",
   featured: true,
-  /* materials: [
-    { name: "Building Blocks (Stone Bricks)", count: 320 },
-    { name: "Oak Trapdoors", count: 64 },
-    { name: "Hoppers", count: 24 },
-    { name: "Double Chests", count: 12 },
-    { name: "Soul Campfires", count: 16 },
-    { name: "Tinted Glass Blocks", count: 128 },
-    { name: "Carpets (Cat Perches)", count: 8 },
-    { name: "Stone Slabs (Roof)", count: 81 },
-  ],*/
 };
 
 export default farm;
