@@ -1,7 +1,7 @@
 import type { FarmData } from "@/types/farm";
 
 export const farm: FarmData = {
-  dn: "b251",
+  dn: "251",
   title: "Minecraft NEW Super Smelter Tutorial - Infinite Fuel - 23k P/HR",
   category: "java",
   farmType: "Other",

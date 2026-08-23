@@ -7,7 +7,7 @@ export const farm: FarmData = {
   farmType: "Wood",
   description: "Comprehensive Minecraft Bedrock tutorial and build blueprint for BEST All Trees Farm Minecraft Bedrock Tutorial - 32,300/HR! - MCPE/Xbox/PS/Switch/Win10. Designed by TheySix for high efficiency, reliability, and ease of construction in survival mode.",
   worldDownloadUrl: "https://www.mediafire.com/file/eug57d476ttbkru/Tree+farm(Pain+edition).mcworld/file",
-  youtubeUrl: "",
+  youtubeUrl: "https://www.youtube.com/watch?v=M-ScLksIffQ",
   version: "1.21 Bedrock",
   rates: "32k/HR",
   difficulty: "Easy",

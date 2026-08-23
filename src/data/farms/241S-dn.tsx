@@ -1,13 +1,13 @@
 import type { FarmData } from "@/types/farm";
 
 export const farm: FarmData = {
-  dn: "b242S",
-  title: "Minecraft Auto Craft Sorting System Tutorial 1.21 NEW!",
+  dn: "241S",
+  title: "3 Easy 1.21 Auto Crafters To Make EVERY Minecraft ITEM!",
   category: "java",
   farmType: "Other",
-  description: "Minecraft java farm: Minecraft Auto Craft Sorting System Tutorial 1.21 NEW!",
+  description: "Minecraft java farm: 3 Easy 1.21 Auto Crafters To Make EVERY Minecraft ITEM!",
   worldDownloadUrl: "link",
-  youtubeUrl: "https://www.youtube.com/watch?v=j3jy4IFLuOA",
+  youtubeUrl: "https://www.youtube.com/watch?v=dbbOUU2GC4Y",
   version: "1.21+",
   author: "TheySix",
   tags: ["Java"],
