@@ -195,23 +195,44 @@ export function FarmDetailView({ farm, relatedFarms }: FarmDetailViewProps) {
             {/* Download Buttons */}
             <div className="space-y-3">
               {/* World Download */}
-              <a
-                href={farm.worldDownloadUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-between w-full p-4 rounded-2xl bg-cyan-600 hover:bg-cyan-500 text-white font-bold transition-all shadow-lg shadow-cyan-600/20 group"
-              >
-                <div className="flex items-center gap-3">
-                  <Download className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                  <div className="text-left">
-                    <div className="text-sm">World Download</div>
-                    <div className="text-[11px] font-normal text-cyan-100 font-mono">
-                      {isJava ? ".rar world save" : ".mcworld save"}
+              {farm.hasWorldDownload && farm.worldDownloadUrl && farm.worldDownloadUrl !== "link" && farm.worldDownloadUrl !== "#" ? (
+                <a
+                  href={farm.worldDownloadUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-between w-full p-4 rounded-2xl bg-cyan-600 hover:bg-cyan-500 text-white font-bold transition-all shadow-lg shadow-cyan-600/20 group"
+                >
+                  <div className="flex items-center gap-3">
+                    <Download className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                    <div className="text-left">
+                      <div className="text-sm">World Download</div>
+                      <div className="text-[11px] font-normal text-cyan-100 font-mono">
+                        {isJava ? ".rar world save" : ".mcworld save"}
+                      </div>
                     </div>
                   </div>
+                  <ExternalLink className="w-4 h-4 opacity-80" />
+                </a>
+              ) : (
+                /* Missing World File Notice with Discord Ticket Button */
+                <div className="p-4 rounded-2xl bg-cyan-950/30 border border-cyan-800/40 text-slate-200 space-y-3">
+                  <div className="flex items-start gap-2.5">
+                    <AlertCircle className="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" />
+                    <p className="text-xs leading-relaxed">
+                      This farm doesn&apos;t have a world download provided, create a ticket and ask nicely for the world file to be provided.
+                    </p>
+                  </div>
+                  <a
+                    href="https://discord.gg/theysix"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 w-full py-2 px-3 rounded-xl bg-[#5865F2] hover:bg-[#4752C4] text-white text-xs font-bold transition-all shadow-sm"
+                  >
+                    <MessageSquarePlus className="w-4 h-4" />
+                    <span>Open Discord Ticket</span>
+                  </a>
                 </div>
-                <ExternalLink className="w-4 h-4 opacity-80" />
-              </a>
+              )}
 
               {/* Java Schematic Handling */}
               {isJava ? (

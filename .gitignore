@@ -33,3 +33,10 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+
+# file list
+world.md
+world2.md
+video.md
+schematics.md
+schematics2.md

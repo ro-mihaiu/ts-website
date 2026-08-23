@@ -63,6 +63,7 @@ export interface FarmWithMetadata extends FarmData {
   youtubeId?: string;
   resolvedThumbnail: string;
   hasSchematic: boolean;
+  hasWorldDownload: boolean;
   views: number;
   viewsDisplay: string;
   schematicFiles: SchematicFileFormats;

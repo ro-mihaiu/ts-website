@@ -118,16 +118,26 @@ export function FarmCard({ farm }: FarmCardProps) {
         {/* Action Buttons */}
         <div className="pt-3 border-t border-slate-800/80 flex items-center gap-2">
           {/* World Download Link */}
-          <a
-            href={farm.worldDownloadUrl && farm.worldDownloadUrl !== "#" ? farm.worldDownloadUrl : farmUrl}
-            target={farm.worldDownloadUrl && farm.worldDownloadUrl !== "#" ? "_blank" : undefined}
-            rel="noopener noreferrer"
-            className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold text-white bg-slate-800 hover:bg-slate-700 border border-slate-700 hover:border-slate-600 transition-all"
-            title="Download World Save"
-          >
-            <Download className="w-3.5 h-3.5 text-cyan-400" />
-            <span>World Save</span>
-          </a>
+          {farm.hasWorldDownload && farm.worldDownloadUrl && farm.worldDownloadUrl !== "link" && farm.worldDownloadUrl !== "#" ? (
+            <a
+              href={farm.worldDownloadUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold text-white bg-slate-800 hover:bg-slate-700 border border-slate-700 hover:border-slate-600 transition-all"
+              title="Download World Save"
+            >
+              <Download className="w-3.5 h-3.5 text-cyan-400" />
+              <span>World Save</span>
+            </a>
+          ) : (
+            <Link
+              href={farmUrl}
+              className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl text-[11px] font-medium text-slate-500 bg-slate-900/80 border border-slate-800/80 hover:text-cyan-400 hover:border-slate-700 transition-colors"
+              title="No world file provided - Click to request ticket"
+            >
+              <span>No World</span>
+            </Link>
+          )}
 
           {/* Java Schematic Download / Preview Link */}
           {isJava && (

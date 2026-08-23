@@ -80,18 +80,33 @@ export function FarmGrid({ initialFarms }: FarmGridProps) {
     }
 
     // Sorting
-    if (sortBy === "dn_asc") {
+    if (sortBy === "date_desc") {
+      result.sort((a, b) => {
+        const dateA = a.date ? new Date(a.date).getTime() : 0;
+        const dateB = b.date ? new Date(b.date).getTime() : 0;
+        if (dateB !== dateA) return dateB - dateA;
+        return b.dn.localeCompare(a.dn, undefined, { numeric: true });
+      });
+    } else if (sortBy === "date_asc") {
+      result.sort((a, b) => {
+        const dateA = a.date ? new Date(a.date).getTime() : 0;
+        const dateB = b.date ? new Date(b.date).getTime() : 0;
+        if (dateA !== dateB) return dateA - dateB;
+        return a.dn.localeCompare(b.dn, undefined, { numeric: true });
+      });
+    } else if (sortBy === "dn_asc") {
       result.sort((a, b) => a.dn.localeCompare(b.dn, undefined, { numeric: true }));
     } else if (sortBy === "dn_desc") {
       result.sort((a, b) => b.dn.localeCompare(a.dn, undefined, { numeric: true }));
-    } else if (sortBy === "title_asc") {
-      result.sort((a, b) => a.title.localeCompare(b.title));
     } else {
       // featured
       result.sort((a, b) => {
         if (a.featured && !b.featured) return -1;
         if (!a.featured && b.featured) return 1;
-        return a.dn.localeCompare(b.dn, undefined, { numeric: true });
+        const dateA = a.date ? new Date(a.date).getTime() : 0;
+        const dateB = b.date ? new Date(b.date).getTime() : 0;
+        if (dateB !== dateA) return dateB - dateA;
+        return b.dn.localeCompare(a.dn, undefined, { numeric: true });
       });
     }
 
@@ -178,17 +193,18 @@ export function FarmGrid({ initialFarms }: FarmGridProps) {
               <Filter className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />
             </div>
 
-            {/* Sort Dropdown */}
-            <div className="relative min-w-[150px] flex-1 md:flex-initial">
+              {/* Sort Dropdown */}
+            <div className="relative min-w-[170px] flex-1 md:flex-initial">
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
                 className="w-full px-3.5 py-3 rounded-2xl bg-slate-950/80 border border-slate-800 text-slate-200 text-sm focus:outline-none focus:border-cyan-500 appearance-none pr-8 cursor-pointer"
               >
                 <option value="featured">Featured First</option>
+                <option value="date_desc">Newest Uploaded</option>
+                <option value="date_asc">Oldest Uploaded</option>
                 <option value="dn_asc">DN Number (Low to High)</option>
                 <option value="dn_desc">DN Number (High to Low)</option>
-                <option value="title_asc">Title (A - Z)</option>
               </select>
               <SlidersHorizontal className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />
             </div>

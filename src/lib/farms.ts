@@ -348,8 +348,22 @@ export function getAllFarms(): FarmWithMetadata[] {
     // Bedrock Edition does not have schematics at all
     const isJava = category === "java";
     const rawSchematic = parsedData.schematicUrl?.trim();
-    const hasSchematic = Boolean(isJava && rawSchematic && rawSchematic !== "#" && rawSchematic.length > 0);
+    const hasSchematic = Boolean(isJava && rawSchematic && rawSchematic !== "#" && rawSchematic.toLowerCase() !== "link" && rawSchematic.length > 0);
     const schematicUrl = isJava && hasSchematic ? rawSchematic : undefined;
+
+    // World download handling & placeholder detection
+    let rawWorld = parsedData.worldDownloadUrl?.trim() || "";
+    if (rawWorld.includes("sites.google.com/view/theysixdownloads/home/")) {
+      rawWorld = "link";
+    }
+    const hasWorldDownload = Boolean(
+      rawWorld &&
+      rawWorld !== "#" &&
+      rawWorld.toLowerCase() !== "link" &&
+      rawWorld.length > 0 &&
+      !rawWorld.includes("sites.google.com/view/theysixdownloads/home/")
+    );
+    const worldDownloadUrl = rawWorld || "link";
 
     // DN identifier: fileSlug (e.g., "111-dn", "b111-dn")
     const dn = parsedData.dn || fileSlug;
@@ -399,6 +413,8 @@ export function getAllFarms(): FarmWithMetadata[] {
       id,
       dn,
       category,
+      worldDownloadUrl,
+      hasWorldDownload,
       schematicUrl,
       hasSchematic,
       normalizedDn,
@@ -411,11 +427,14 @@ export function getAllFarms(): FarmWithMetadata[] {
     });
   }
 
-  // Sort by featured first, then by date / dn descending
+  // Sort by featured first, then by date descending (newest first), then by dn descending
   return farms.sort((a, b) => {
     if (a.featured && !b.featured) return -1;
     if (!a.featured && b.featured) return 1;
-    return a.dn.localeCompare(b.dn, undefined, { numeric: true, sensitivity: "base" });
+    const dateA = a.date ? new Date(a.date).getTime() : 0;
+    const dateB = b.date ? new Date(b.date).getTime() : 0;
+    if (dateB !== dateA) return dateB - dateA;
+    return b.dn.localeCompare(a.dn, undefined, { numeric: true, sensitivity: "base" });
   });
 }
 
