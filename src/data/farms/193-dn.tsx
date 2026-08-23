@@ -1,6 +1,7 @@
 import type { FarmData } from "@/types/farm";
 
 export const farm: FarmData = {
+  dn: "193",
   title: "Minecraft ULTIMATE Super Smelter 1.20 - INFINITE FUEL - 30,000 Items P/H!",
   farmType: "Super Smelter",
   description: "Comprehensive Minecraft Java tutorial and build blueprint for Minecraft ULTIMATE Super Smelter 1.20 - INFINITE FUEL - 30,000 Items P/H!. Designed by TheySix for high efficiency, reliability, and ease of construction in survival mode.",
@@ -10,7 +11,7 @@ export const farm: FarmData = {
   version: "1.20+",
   rates: "30,000 Items",
   difficulty: "Easy",
-  tags: ["Java","Super Smelter","Infinite"],
+  tags: ["Java", "Super Smelter", "Infinite"],
   author: "TheySix",
   date: "2023-07-08",
   featured: false,

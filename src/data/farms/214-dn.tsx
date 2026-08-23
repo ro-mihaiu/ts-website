@@ -1,6 +1,7 @@
 import type { FarmData } from "@/types/farm";
 
 export const farm: FarmData = {
+  dn: "214",
   title: "Minecraft BEST SORTING SYSTEM 1.20.1 - NEW UPDATE - 20x FASTER!",
   farmType: "Storage & Sorter",
   description: "Comprehensive Minecraft Java tutorial and build blueprint for Minecraft BEST SORTING SYSTEM 1.20.1 - NEW UPDATE - 20x FASTER!. Designed by TheySix for high efficiency, reliability, and ease of construction in survival mode.",
@@ -8,7 +9,7 @@ export const farm: FarmData = {
   youtubeUrl: "",
   version: "1.20.1+",
   difficulty: "Easy",
-  tags: ["Java","Storage & Sorter"],
+  tags: ["Java", "Storage & Sorter"],
   author: "TheySix",
   date: "2023-08-20",
   featured: false,

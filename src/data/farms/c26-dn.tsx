@@ -1,6 +1,7 @@
 import type { FarmData } from "@/types/farm";
 
 export const farm: FarmData = {
+  dn: "c26",
   title: "Minecraft Wind Mill Tutorial 1.21 - +Interior - Java & Bedrock & PE",
   farmType: "Build",
   description: "Comprehensive Minecraft Java tutorial and build blueprint for Minecraft Wind Mill Tutorial 1.21 - +Interior - Java & Bedrock & PE. Designed by TheySix for high efficiency, reliability, and ease of construction in survival mode.",
@@ -9,7 +10,7 @@ export const farm: FarmData = {
   youtubeUrl: "",
   version: "1.21+",
   difficulty: "Easy",
-  tags: ["Java","Build"],
+  tags: ["Java", "Build"],
   author: "TheySix",
   date: "2024-06-14",
   featured: false,

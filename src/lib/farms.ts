@@ -97,6 +97,7 @@ function parseFarmFileContent(content: string, filename: string): FarmData {
     };
 
     const title = extractStringField("title") || "Untitled Minecraft Farm";
+    const dn = extractStringField("dn") || undefined;
     const farmType = extractStringField("farmType") || "General Farm";
     const description = extractStringField("description") || "No description provided.";
     const detailedDescription = extractStringField("detailedDescription") || "";
@@ -114,7 +115,8 @@ function parseFarmFileContent(content: string, filename: string): FarmData {
     const tags = extractArrayField("tags");
 
     const featured = /featured\s*:\s*true/i.test(content);
-    const viewsRaw = extractStringField("views");
+    const viewsMatch = content.match(/views\s*:\s*["'`]?([^"',`\n\r]+)["'`]?/i);
+    const viewsRaw = viewsMatch ? viewsMatch[1].trim() : "";
     let views: number | string | undefined = undefined;
     if (viewsRaw) {
       const parsedNum = parseInt(viewsRaw.replace(/[^0-9]/g, ""), 10);
@@ -159,6 +161,7 @@ function parseFarmFileContent(content: string, filename: string): FarmData {
     }
 
     return {
+      dn,
       title,
       farmType,
       description,

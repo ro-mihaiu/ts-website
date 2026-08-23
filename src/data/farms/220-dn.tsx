@@ -1,6 +1,7 @@
 import type { FarmData } from "@/types/farm";
 
 export const farm: FarmData = {
+  dn: "220",
   title: "Minecraft BEST Shulker Box Loader & Unloader 1.20.1 - Tileable & Cheap!",
   farmType: "Shulker",
   description: "Comprehensive Minecraft Java tutorial and build blueprint for Minecraft BEST Shulker Box Loader & Unloader 1.20.1 - Tileable & Cheap!. Designed by TheySix for high efficiency, reliability, and ease of construction in survival mode.",
@@ -8,7 +9,7 @@ export const farm: FarmData = {
   youtubeUrl: "",
   version: "1.20.1+",
   difficulty: "Easy",
-  tags: ["Java","Shulker","Easy"],
+  tags: ["Java", "Shulker", "Easy"],
   author: "TheySix",
   date: "2023-09-05",
   featured: false,
