@@ -9,7 +9,7 @@ export const farm: FarmData = {
   schematicUrl: "https://www.mediafire.com/file/fim5kre32ixrv62/IRON_FARM_NEW_V2_PB_%5BM%5D.litematic/file",
   youtubeUrl: "https://www.youtube.com/watch?v=msuuGFt_pnI",
   version: "1.20+",
-  rates: "2,400+ Iron/hr",
+  rates: "2.4k+ Iron/hr",
   difficulty: "Easy",
   tags: ["Java", "Iron", "AFK"],
   author: "TheySix",

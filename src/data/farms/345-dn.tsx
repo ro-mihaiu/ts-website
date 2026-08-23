@@ -8,7 +8,7 @@ export const farm: FarmData = {
   worldDownloadUrl: "link",
   youtubeUrl: "https://www.youtube.com/watch?v=YbWis0NEpwg",
   version: "1.21+",
-  rates: "~+24,700 PER HOUR/ Bad Omen 2 & 5 = 35,000/HR !",
+  rates: "~+25k PER HOUR/ Bad Omen 2 & 5 = 35k/HR !",
   difficulty: "Easy",
   tags: ["Java", "Raid", "AFK"],
   author: "TheySix",

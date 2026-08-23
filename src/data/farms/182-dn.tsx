@@ -9,7 +9,7 @@ export const farm: FarmData = {
   schematicUrl: "https://www.mediafire.com/file/mfre73sraa77hfr/NEW_V1_Ultra_XP_Farm.litematic/file",
   youtubeUrl: "https://www.youtube.com/watch?v=3kj_hC2Pzhs",
   version: "1.20+",
-  rates: "500,000+ XP/hr",
+  rates: "500k+ XP/hr",
   difficulty: "Easy",
   tags: ["Java", "XP", "AFK"],
   author: "TheySix",

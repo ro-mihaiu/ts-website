@@ -13,10 +13,20 @@ interface FarmPageProps {
 
 export async function generateStaticParams() {
   const farms = getAllFarms();
-  return farms.map((farm) => ({
-    category: farm.category,
-    dn: farm.dn,
-  }));
+  const set = new Set<string>();
+  const params: { category: string; dn: string }[] = [];
+
+  farms.forEach((farm) => {
+    const keys = [farm.dn, `${farm.dn}-dn`, farm.normalizedDn];
+    for (const k of keys) {
+      if (k && !set.has(`${farm.category}/${k.toLowerCase()}`)) {
+        set.add(`${farm.category}/${k.toLowerCase()}`);
+        params.push({ category: farm.category, dn: k });
+      }
+    }
+  });
+
+  return params;
 }
 
 export async function generateMetadata({ params }: FarmPageProps): Promise<Metadata> {

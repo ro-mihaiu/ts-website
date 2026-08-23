@@ -61,15 +61,23 @@ export function RealViewsCount({
     setHasLoaded(true);
   }, [dn, initialViews]);
 
-  // Format count string
-  const displayViews = format === "full"
-    ? views.toLocaleString()
-    : views >= 1000
-      ? `${(views / 1000).toFixed(1)}K`
-      : `${views}`;
+  // Format count string (estimated compact e.g. 83k, no 83,233)
+  const formatCompactViews = (num: number): string => {
+    if (num >= 1_000_000) {
+      const val = num / 1_000_000;
+      return (val >= 10 || val % 1 === 0 ? val.toFixed(0) : val.toFixed(1)).replace(/\.0$/, "") + "m";
+    }
+    if (num >= 1_000) {
+      const val = num / 1_000;
+      return (val >= 10 || val % 1 === 0 ? val.toFixed(0) : val.toFixed(1)).replace(/\.0$/, "") + "k";
+    }
+    return num.toString();
+  };
+
+  const displayViews = formatCompactViews(views);
 
   return (
-    <div className={`inline-flex items-center gap-1.5 ${className}`} title={`${views.toLocaleString()} total verified views`}>
+    <div className={`inline-flex items-center gap-1.5 ${className}`} title={`~${displayViews} estimated views`}>
       <Eye className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
       <span className="font-mono text-slate-300">
         {displayViews} views

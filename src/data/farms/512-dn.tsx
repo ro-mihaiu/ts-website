@@ -8,7 +8,7 @@ export const farm: FarmData = {
   worldDownloadUrl: "link",
   youtubeUrl: "https://www.youtube.com/watch?v=qcJNv5eCOnU",
   version: "1.21++",
-  rates: "2,500+ Gunpowder/hr",
+  rates: "2.5k+ Gunpowder/hr",
   difficulty: "Easy",
   tags: ["Java", "Creeper", "AFK", "Easy"],
   author: "TheySix",

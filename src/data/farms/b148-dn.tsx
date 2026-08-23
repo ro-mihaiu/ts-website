@@ -1,7 +1,9 @@
 import type { FarmData } from "@/types/farm";
 
 export const farm: FarmData = {
+  dn: "b148",
   title: "NEW EASY XP Farm for Minecraft Bedrock 1.21/26.1+!",
+  category: "bedrock",
   farmType: "XP",
   description: "Comprehensive Minecraft Bedrock tutorial and build blueprint for NEW EASY XP Farm for Minecraft Bedrock 1.21/26.1+!. Designed by TheySix for high efficiency, reliability, and ease of construction in survival mode.",
   worldDownloadUrl: "link",
@@ -12,6 +14,7 @@ export const farm: FarmData = {
   tags: ["Bedrock","XP","AFK","Easy"],
   author: "TheySix",
   date: "2026-06-05",
+  
   featured: false,
 };
 

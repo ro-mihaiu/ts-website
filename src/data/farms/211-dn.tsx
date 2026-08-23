@@ -9,7 +9,7 @@ export const farm: FarmData = {
   schematicUrl: "https://www.mediafire.com/file/jv879frufszh92z/TheySix_Bartering_Compact_Farm_NEW_V1.litematic/file",
   youtubeUrl: "https://www.youtube.com/watch?v=wES25gOejnY",
   version: "1.20+",
-  rates: "+3500 ~ +21000 PER HOUR !",
+  rates: "+3.5k ~ +21k PER HOUR !",
   difficulty: "Easy",
   tags: ["Java", "Gold & Bartering", "Easy"],
   author: "TheySix",

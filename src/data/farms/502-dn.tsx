@@ -9,7 +9,7 @@ export const farm: FarmData = {
   schematicUrl: "https://www.mediafire.com/file/jb4wm82839agn67/TheySix_-_TLM_TF_V1.litematic/file",
   youtubeUrl: "https://www.youtube.com/watch?v=M9VICb_EKn8",
   version: "1.21++",
-  rates: "30,000 Logs",
+  rates: "30k Logs",
   difficulty: "Easy",
   tags: ["Java", "Wood", "Easy"],
   author: "TheySix",

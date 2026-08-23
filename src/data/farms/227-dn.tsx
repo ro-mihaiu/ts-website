@@ -8,7 +8,7 @@ export const farm: FarmData = {
   worldDownloadUrl: "https://www.mediafire.com/file/ywhnnqbzdbaxaae/TheySix+-+NEW+Creeper+FARM+PBFV1.rar/file",
   youtubeUrl: "https://www.youtube.com/watch?v=7ZEa2X8zsvM",
   version: "1.20.1+",
-  rates: "20000 PER/H",
+  rates: "20k PER/H",
   difficulty: "Easy",
   tags: ["Java", "Creeper", "AFK"],
   author: "TheySix",

@@ -8,7 +8,7 @@ export const farm: FarmData = {
   worldDownloadUrl: "https://www.mediafire.com/file_premium/vuy3snh2kv6qfkd/SinFul_-_Stacking_Raid_Farm_MV1.rar/file",
   youtubeUrl: "https://www.youtube.com/watch?v=bAHQ321sF7E",
   version: "1.20.2+",
-  rates: "4,000+ Emeralds/hr",
+  rates: "4k+ Emeralds/hr",
   difficulty: "Easy",
   tags: ["Java", "Raid", "Infinite"],
   author: "TheySix",

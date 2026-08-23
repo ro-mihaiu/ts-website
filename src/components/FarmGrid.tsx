@@ -120,6 +120,45 @@ export function FarmGrid({ initialFarms }: FarmGridProps) {
     return filteredFarms.slice(start, start + itemsPerPage);
   }, [filteredFarms, currentPage, itemsPerPage]);
 
+  // Truncated pagination calculation: e.g. < 1 .. (current.page) .. 15 >
+  const paginationItems = useMemo(() => {
+    if (totalPages <= 7) {
+      return Array.from({ length: totalPages }, (_, i) => i + 1);
+    }
+
+    const siblings = 1;
+    const leftSiblingIndex = Math.max(currentPage - siblings, 1);
+    const rightSiblingIndex = Math.min(currentPage + siblings, totalPages);
+
+    const showLeftDots = leftSiblingIndex > 2;
+    const showRightDots = rightSiblingIndex < totalPages - 1;
+
+    if (!showLeftDots && showRightDots) {
+      const leftRange = [1, 2, 3, 4];
+      return [...leftRange, "..", totalPages];
+    }
+
+    if (showLeftDots && !showRightDots) {
+      const rightRange = [totalPages - 3, totalPages - 2, totalPages - 1, totalPages];
+      return [1, "..", ...rightRange];
+    }
+
+    if (showLeftDots && showRightDots) {
+      const middleRange = [currentPage - 1, currentPage, currentPage + 1];
+      return [1, "..", ...middleRange, "..", totalPages];
+    }
+
+    return Array.from({ length: totalPages }, (_, i) => i + 1);
+  }, [totalPages, currentPage]);
+
+  const handlePageChange = (pageNum: number) => {
+    setCurrentPage(pageNum);
+    const gridSection = document.getElementById("farms-grid-section");
+    if (gridSection) {
+      gridSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   const javaCount = initialFarms.filter((f) => f.category === "java").length;
   const bedrockCount = initialFarms.filter((f) => f.category === "bedrock").length;
 
@@ -145,7 +184,7 @@ export function FarmGrid({ initialFarms }: FarmGridProps) {
   };
 
   return (
-    <div className="space-y-8">
+    <div id="farms-grid-section" className="space-y-8 scroll-mt-6">
       {/* Search & Filter Bar */}
       <div className="glass-panel p-4 sm:p-6 rounded-3xl border border-slate-800 shadow-xl space-y-4">
         <div className="flex flex-col md:flex-row items-stretch md:items-center gap-3">
@@ -293,9 +332,9 @@ export function FarmGrid({ initialFarms }: FarmGridProps) {
 
       {/* Pagination Controls */}
       {totalPages > 1 && (
-        <div className="flex items-center justify-center gap-2 pt-6">
+        <div className="flex items-center justify-center gap-1.5 sm:gap-2 pt-6">
           <button
-            onClick={() => setCurrentPage((p) => Math.max(p - 1, 1))}
+            onClick={() => handlePageChange(Math.max(currentPage - 1, 1))}
             disabled={currentPage === 1}
             className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white disabled:opacity-40 disabled:pointer-events-none transition-colors"
             aria-label="Previous page"
@@ -303,24 +342,42 @@ export function FarmGrid({ initialFarms }: FarmGridProps) {
             <ChevronLeft className="w-5 h-5" />
           </button>
 
-          <div className="flex items-center gap-1.5 font-mono text-sm">
-            {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNum) => (
-              <button
-                key={pageNum}
-                onClick={() => setCurrentPage(pageNum)}
-                className={`w-9 h-9 rounded-xl font-semibold transition-all ${
-                  currentPage === pageNum
-                    ? "bg-cyan-600 text-white shadow-md shadow-cyan-600/30"
-                    : "bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:bg-slate-800"
-                }`}
-              >
-                {pageNum}
-              </button>
-            ))}
+          <div className="flex items-center gap-1 sm:gap-1.5 font-mono text-sm">
+            {paginationItems.map((item, idx) => {
+              if (item === "..") {
+                return (
+                  <span
+                    key={`ellipsis-${idx}`}
+                    className="w-7 sm:w-8 h-9 flex items-center justify-center text-slate-500 font-bold select-none tracking-widest text-xs sm:text-sm"
+                  >
+                    ..
+                  </span>
+                );
+              }
+
+              const pageNum = Number(item);
+              const isActive = currentPage === pageNum;
+
+              return (
+                <button
+                  key={pageNum}
+                  onClick={() => handlePageChange(pageNum)}
+                  className={`w-8 h-8 sm:w-9 sm:h-9 rounded-xl font-semibold transition-all text-xs sm:text-sm ${
+                    isActive
+                      ? "bg-cyan-600 text-white shadow-md shadow-cyan-600/30"
+                      : "bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:bg-slate-800"
+                  }`}
+                  aria-current={isActive ? "page" : undefined}
+                  aria-label={`Page ${pageNum}`}
+                >
+                  {pageNum}
+                </button>
+              );
+            })}
           </div>
 
           <button
-            onClick={() => setCurrentPage((p) => Math.min(p + 1, totalPages))}
+            onClick={() => handlePageChange(Math.min(currentPage + 1, totalPages))}
             disabled={currentPage === totalPages}
             className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white disabled:opacity-40 disabled:pointer-events-none transition-colors"
             aria-label="Next page"

@@ -8,7 +8,7 @@ export const farm: FarmData = {
   worldDownloadUrl: "link",
   youtubeUrl: "https://www.youtube.com/watch?v=0mOMvPw0cW0",
   version: "1.20+",
-  rates: "+ 1350 ~ +1450 PER HOUR -",
+  rates: "+ 1.4k ~ +1.4k PER HOUR -",
   difficulty: "Easy",
   tags: ["Java", "Shulker", "AFK"],
   author: "TheySix",

@@ -9,7 +9,7 @@ export const farm: FarmData = {
   schematicUrl: "https://www.mediafire.com/file/a5y42ns1z9bxjdv/TheySix_-_Hyper_VXM_BM_V5.litematic/file",
   youtubeUrl: "https://www.youtube.com/watch?v=zeNEt6aHuME",
   version: "1.21++",
-  rates: "5,000+ Bonemeal/hr",
+  rates: "5k+ Bonemeal/hr",
   difficulty: "Easy",
   tags: ["Java", "Bonemeal"],
   author: "TheySix",

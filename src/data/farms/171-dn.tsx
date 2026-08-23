@@ -9,7 +9,7 @@ export const farm: FarmData = {
   schematicUrl: "https://www.mediafire.com/file/1vd5pjlodb8s4pw/NEW_Rail_Duper_V1.litematic/file",
   youtubeUrl: "https://www.youtube.com/watch?v=jj6sB98kt-g",
   version: "1.19.4+",
-  rates: "+ 198000 ~ +200000 PER HOUR",
+  rates: "+ 198k ~ +200k PER HOUR",
   difficulty: "Easy",
   tags: ["Java", "Rail Duper"],
   author: "TheySix",

@@ -8,7 +8,7 @@ export const farm: FarmData = {
   worldDownloadUrl: "link",
   youtubeUrl: "https://www.youtube.com/watch?v=lCrf8_XltG4",
   version: "1.20+",
-  rates: "+3200 ~ +32,000 Per Hour ! / You can add more layers to increase the farm rate!",
+  rates: "+3.2k ~ +32k Per Hour ! / You can add more layers to increase the farm rate!",
   difficulty: "Easy",
   tags: ["Java", "Iron", "AFK"],
   author: "TheySix",

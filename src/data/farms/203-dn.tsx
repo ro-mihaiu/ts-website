@@ -9,7 +9,7 @@ export const farm: FarmData = {
   schematicUrl: "https://www.mediafire.com/file/ybwwbety4rdgc2d/TheySix+-+NEW+Bamboo+Farm+FM+V2+S.litematic/file",
   youtubeUrl: "https://www.youtube.com/watch?v=GrPMnw0KTUc",
   version: "1.20+",
-  rates: "20,000/HR",
+  rates: "20k/HR",
   difficulty: "Easy",
   tags: ["Java", "Bamboo"],
   author: "TheySix",

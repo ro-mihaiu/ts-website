@@ -8,7 +8,7 @@ export const farm: FarmData = {
   worldDownloadUrl: "https://www.mediafire.com/file/zah28b8l9vp8usf/TheySix+-+IF+V3RTX.rar/file",
   youtubeUrl: "https://www.youtube.com/watch?v=hRLXGI-SG_Y",
   version: "1.21++",
-  rates: "3,200 IRON",
+  rates: "3.2k IRON",
   difficulty: "Easy",
   tags: ["Java", "Iron", "AFK", "Easy"],
   author: "TheySix",

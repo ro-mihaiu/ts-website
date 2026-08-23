@@ -8,7 +8,7 @@ export const farm: FarmData = {
   worldDownloadUrl: "https://www.mediafire.com/file/mluzawvqc85cv4a/TheySix+-+Cherry+Wood+Farm+NEW+V2HF.rar/file",
   youtubeUrl: "",
   version: "1.20.2+",
-  rates: "20,000 P/HR",
+  rates: "20k P/HR",
   difficulty: "Easy",
   tags: ["Java", "Wood"],
   author: "TheySix",

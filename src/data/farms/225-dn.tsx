@@ -8,7 +8,7 @@ export const farm: FarmData = {
   worldDownloadUrl: "https://www.mediafire.com/file/n6zdjsc1xjnq6ej/TheySix+-+MegaBonemealFarm+NEWV1.rar/file",
   youtubeUrl: "https://www.youtube.com/watch?v=IHqrtT46TcI",
   version: "1.20.1+",
-  rates: "13000 PER/H",
+  rates: "13k PER/H",
   difficulty: "Easy",
   tags: ["Java", "Bonemeal"],
   author: "TheySix",

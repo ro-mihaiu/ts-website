@@ -8,7 +8,7 @@ export const farm: FarmData = {
   worldDownloadUrl: "https://www.mediafire.com/file/sp6c05epilyflxi/TheySix+-+MRP+MF+V1.rar/file",
   youtubeUrl: "https://www.youtube.com/watch?v=HhVK0AoW2ZE",
   version: "1.21+",
-  rates: "4,000+ Drops/hr",
+  rates: "4k+ Drops/hr",
   difficulty: "Easy",
   tags: ["Java", "Mob", "AFK", "Infinite"],
   author: "TheySix",

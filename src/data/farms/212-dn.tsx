@@ -9,7 +9,7 @@ export const farm: FarmData = {
   schematicUrl: "https://www.mediafire.com/file/nsvzhtw8ehrvgf1/TheySix_StackingRaidFarm_NEW_V2.litematic/file",
   youtubeUrl: "https://www.youtube.com/watch?v=6iU6UJHJT54",
   version: "1.20.1+",
-  rates: "4,000+ Emeralds/hr",
+  rates: "4k+ Emeralds/hr",
   difficulty: "Easy",
   tags: ["Java", "Raid", "Infinite"],
   author: "TheySix",

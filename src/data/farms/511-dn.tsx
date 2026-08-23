@@ -8,7 +8,7 @@ export const farm: FarmData = {
   worldDownloadUrl: "https://www.mediafire.com/file/hfdaxir416yw54b/TheySix+-+MX+MF+V2.rar/file",
   youtubeUrl: "https://www.youtube.com/watch?v=FpUNJ9y9taY",
   version: "1.21++",
-  rates: "6,720 In 30 Min",
+  rates: "6.7k In 30 Min",
   difficulty: "Easy",
   tags: ["Java", "XP", "AFK", "Easy"],
   author: "TheySix",

@@ -8,7 +8,7 @@ export const farm: FarmData = {
   worldDownloadUrl: "https://www.mediafire.com/file/5v8afu5hsec3zdh/TheySix+-+SimpleSugarCaneFarmV2.rar/file",
   youtubeUrl: "https://www.youtube.com/watch?v=HeOG5kXGgpA",
   version: "1.20.2+",
-  rates: "4,500+ Sugar Cane/hr",
+  rates: "4.5k+ Sugar Cane/hr",
   difficulty: "Easy",
   tags: ["Java", "Sugar Cane"],
   author: "TheySix",

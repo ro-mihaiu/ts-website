@@ -9,7 +9,7 @@ export const farm: FarmData = {
   schematicUrl: "https://www.mediafire.com/file_premium/at1eb5ry6jx77xr/TheySix_-_ShulkerFxV1.litematic/file",
   youtubeUrl: "https://www.youtube.com/watch?v=_7hwLnUsi_0",
   version: "1.21+",
-  rates: "1,500+ Gunpowder/hr",
+  rates: "1.5k+ Gunpowder/hr",
   difficulty: "Easy",
   tags: ["Shulker", "Shulker Shells", "AFK"],
   author: "TheySix",

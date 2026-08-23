@@ -8,7 +8,7 @@ export const farm: FarmData = {
   worldDownloadUrl: "https://www.mediafire.com/file_premium/1ciwnb9u15w0eek/TheySix_-_NEW_Wood_Farm_V1_%5BL%5D.rar/file",
   youtubeUrl: "https://www.youtube.com/watch?v=WFn84y2YuG4",
   version: "1.20.1+",
-  rates: "15,000 PER/H",
+  rates: "15k PER/H",
   difficulty: "Easy",
   tags: ["Java", "Wood", "Easy", "Infinite"],
   author: "TheySix",

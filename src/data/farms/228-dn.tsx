@@ -8,7 +8,7 @@ export const farm: FarmData = {
   worldDownloadUrl: "https://www.mediafire.com/file_premium/9ggv0x6pd3bo62c/TheySix_-_Bamboo_Farm_NEW_V2NE.rar/file",
   youtubeUrl: "https://www.youtube.com/watch?v=0o3ucKWdZI4",
   version: "1.20.1+",
-  rates: "15000 PER/H",
+  rates: "15k PER/H",
   difficulty: "Easy",
   tags: ["Java", "Bamboo", "Easy"],
   author: "TheySix",

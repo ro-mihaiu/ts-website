@@ -43,6 +43,33 @@ export function formatMaterialItem(name: string, count: number, customColor?: st
 }
 
 /**
+ * Format a number to compact estimated format (e.g. 83233 -> '83k', 854784 -> '855k', 1200000 -> '1.2m')
+ */
+export function formatCompactNumber(num: number): string {
+  if (num >= 1_000_000) {
+    const val = num / 1_000_000;
+    return (val >= 10 || val % 1 === 0 ? val.toFixed(0) : val.toFixed(1)).replace(/\.0$/, "") + "m";
+  }
+  if (num >= 1_000) {
+    const val = num / 1_000;
+    return (val >= 10 || val % 1 === 0 ? val.toFixed(0) : val.toFixed(1)).replace(/\.0$/, "") + "k";
+  }
+  return num.toString();
+}
+
+/**
+ * Format rates string to replace large numbers with compact estimated values (e.g. "12,000+ Gunpowder/hr" -> "12k+ Gunpowder/hr")
+ */
+export function formatCompactRates(rates?: string): string {
+  if (!rates) return "";
+  return rates.replace(/\b\d{1,3}(?:,\d{3})+(?:\.\d+)?\b|\b\d{4,}(?:\.\d+)?\b/g, (match) => {
+    const num = parseFloat(match.replace(/,/g, ""));
+    if (isNaN(num)) return match;
+    return formatCompactNumber(num);
+  });
+}
+
+/**
  * Extract YouTube ID from various YouTube URL formats
  */
 export function extractYouTubeId(url?: string): string | undefined {
@@ -289,15 +316,13 @@ export function getAllFarms(): FarmWithMetadata[] {
 
     // Calculate deterministic view counts if not explicitly defined
     let calculatedViews = 15200;
-    let viewsDisplay = "15.2K";
 
     if (parsedData.views !== undefined) {
       if (typeof parsedData.views === "number") {
         calculatedViews = parsedData.views;
-        viewsDisplay = calculatedViews >= 1000 ? `${(calculatedViews / 1000).toFixed(1)}K` : `${calculatedViews}`;
       } else {
-        viewsDisplay = parsedData.views.toString();
-        calculatedViews = parseInt(viewsDisplay.replace(/[^0-9]/g, ""), 10) || 15200;
+        const parsedNum = parseInt(parsedData.views.toString().replace(/[^0-9]/g, ""), 10);
+        calculatedViews = isNaN(parsedNum) ? 15200 : parsedNum;
       }
     } else {
       let hash = 0;
@@ -308,8 +333,10 @@ export function getAllFarms(): FarmWithMetadata[] {
       }
       const positiveHash = Math.abs(hash);
       calculatedViews = (positiveHash % 86400) + 4800;
-      viewsDisplay = `${(calculatedViews / 1000).toFixed(1)}K`;
     }
+
+    const viewsDisplay = formatCompactNumber(calculatedViews);
+    const resolvedRates = formatCompactRates(parsedData.rates || "");
 
     const schematicFiles = {
       litematic: `${dn}.litematic`,
@@ -326,6 +353,7 @@ export function getAllFarms(): FarmWithMetadata[] {
       id,
       dn,
       category,
+      rates: resolvedRates,
       worldDownloadUrl,
       hasWorldDownload,
       schematicUrl,

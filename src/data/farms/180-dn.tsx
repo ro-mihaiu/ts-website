@@ -9,7 +9,7 @@ export const farm: FarmData = {
   schematicUrl: "https://www.mediafire.com/file/lzbqh7qg0sjshc1/NEW_V2_Super_Smelter.litematic/file",
   youtubeUrl: "https://www.youtube.com/watch?v=jsmlER7Ba64",
   version: "1.20+",
-  rates: "15,000 Items",
+  rates: "15k Items",
   difficulty: "Easy",
   tags: ["Java", "Super Smelter"],
   author: "TheySix",

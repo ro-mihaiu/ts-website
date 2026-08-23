@@ -9,7 +9,7 @@ export const farm: FarmData = {
   schematicUrl: "https://www.mediafire.com/file/r7lmju2zdq18lcq/TheySix+-+BRX+Raid+Farm+V2.litematic/file",
   youtubeUrl: "https://www.youtube.com/watch?v=VMYTAtTQPWU",
   version: "1.21+",
-  rates: "1,500+ Totems & Emeralds/hr",
+  rates: "1.5k+ Totems & Emeralds/hr",
   difficulty: "Easy",
   tags: ["Java", "Raid"],
   author: "TheySix",

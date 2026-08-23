@@ -8,7 +8,7 @@ export const farm: FarmData = {
   worldDownloadUrl: "link",
   youtubeUrl: "https://www.youtube.com/watch?v=alN-ED1RgY8",
   version: "1.21+",
-  rates: "~+2,900/HR depends on looting enchantment level as well and be sure you are playing at hard difficulty!",
+  rates: "~+2.9k/HR depends on looting enchantment level as well and be sure you are playing at hard difficulty!",
   difficulty: "Easy",
   tags: ["Java", "Raid", "AFK"],
   author: "TheySix",

@@ -8,7 +8,7 @@ export const farm: FarmData = {
   worldDownloadUrl: "https://www.mediafire.com/file/1nidbet8s8a95el/TheySix+-+Quad+Mob+Farm+V2+EB.rar/file",
   youtubeUrl: "https://www.youtube.com/watch?v=DNM4wTPC2Oc",
   version: "1.20.2+",
-  rates: "45000 PER/H",
+  rates: "45k PER/H",
   difficulty: "Easy",
   tags: ["Java", "Mob", "AFK"],
   author: "TheySix",

@@ -8,7 +8,7 @@ export const farm: FarmData = {
   worldDownloadUrl: "https://www.mediafire.com/file/m2sfsb0l3sx1g79/TheySix+-+WitherSkeletonFarmNV2.rar/file",
   youtubeUrl: "https://www.youtube.com/watch?v=ILm0IbuSIqA",
   version: "1.20.2+",
-  rates: "10,000+ Drops/hr",
+  rates: "10k+ Drops/hr",
   difficulty: "Easy",
   tags: ["Java", "Mob", "AFK", "Easy"],
   author: "TheySix",

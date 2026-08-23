@@ -8,7 +8,7 @@ export const farm: FarmData = {
   worldDownloadUrl: "link",
   youtubeUrl: "https://www.youtube.com/watch?v=UblkInI-wmY",
   version: "1.21+",
-  rates: "+1,330,000 PER HOUR !",
+  rates: "+1.3m PER HOUR !",
   difficulty: "Easy",
   tags: ["Java", "Tripwire Hook & Emerald", "AFK"],
   author: "TheySix",

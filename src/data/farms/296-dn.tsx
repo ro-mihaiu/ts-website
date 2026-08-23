@@ -8,7 +8,7 @@ export const farm: FarmData = {
   worldDownloadUrl: "link",
   youtubeUrl: "https://www.youtube.com/watch?v=4KZdxE-zbrc",
   version: "1.21+",
-  rates: "300,000 Drops Per Hour!",
+  rates: "300k Drops Per Hour!",
   difficulty: "Easy",
   tags: ["Java", "Food & Crop", "AFK"],
   author: "TheySix",

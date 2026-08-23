@@ -8,7 +8,7 @@ export const farm: FarmData = {
   worldDownloadUrl: "https://www.mediafire.com/file/vgsx3dfgk18xyut/TheySix+-+House+IronFarm+V1+",
   youtubeUrl: "",
   version: "1.20+",
-  rates: "2,400+ Iron/hr",
+  rates: "2.4k+ Iron/hr",
   difficulty: "Easy",
   tags: ["Java", "Iron", "AFK", "Easy"],
   author: "TheySix",

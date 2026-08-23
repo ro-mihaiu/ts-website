@@ -8,7 +8,7 @@ export const farm: FarmData = {
   worldDownloadUrl: "https://www.mediafire.com/file/pk470ksf0ic6g36/TheySix+-+RF+RT+V2xT.rar/file",
   youtubeUrl: "https://www.youtube.com/watch?v=3oBaeH1G_Fo",
   version: "1.21++",
-  rates: "1,500 In 5 Min",
+  rates: "1.5k In 5 Min",
   difficulty: "Easy",
   tags: ["Java", "Raid", "Easy"],
   author: "TheySix",

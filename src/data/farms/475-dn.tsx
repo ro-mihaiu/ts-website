@@ -9,7 +9,7 @@ export const farm: FarmData = {
   schematicUrl: "https://www.mediafire.com/file/42d391lcmabnwgi/TheySix+-+SUF+V1.litematic/file",
   youtubeUrl: "https://www.youtube.com/watch?v=uY1lNoRbnSA",
   version: "1.21+",
-  rates: "1,500+ Shells/hr",
+  rates: "1.5k+ Shells/hr",
   difficulty: "Easy",
   tags: ["Java", "Shulker"],
   author: "TheySix",

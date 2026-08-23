@@ -8,7 +8,7 @@ export const farm: FarmData = {
   worldDownloadUrl: "link",
   youtubeUrl: "https://www.youtube.com/watch?v=qargFzw1o-o",
   version: "1.21+",
-  rates: "+5,200 ~ +28,300",
+  rates: "+5.2k ~ +28k",
   difficulty: "Easy",
   tags: ["Java", "Mob", "AFK"],
   author: "TheySix",

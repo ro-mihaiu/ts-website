@@ -8,7 +8,7 @@ export const farm: FarmData = {
   worldDownloadUrl: "https://www.mediafire.com/file/hua60z3mfykiaq8/TheySix+-+RTC+CFX+V1.zip/file",
   youtubeUrl: "https://www.youtube.com/watch?v=cMYI4xizuw8",
   version: "1.21+",
-  rates: "2,500+ Gunpowder/hr",
+  rates: "2.5k+ Gunpowder/hr",
   difficulty: "Easy",
   tags: ["Java", "Creeper", "AFK"],
   author: "TheySix",

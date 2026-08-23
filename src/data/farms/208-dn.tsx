@@ -9,7 +9,7 @@ export const farm: FarmData = {
   schematicUrl: "https://www.mediafire.com/file/4r1ks8snjzzl5zu/TheySix_-_Skeleton_Farm_NEW_V1_%5BF-M%5D.litematic/file",
   youtubeUrl: "https://www.youtube.com/watch?v=txjTnNJdDlc",
   version: "1.20.1+",
-  rates: "10,000+ Drops/hr",
+  rates: "10k+ Drops/hr",
   difficulty: "Easy",
   tags: ["Java", "Mob", "AFK", "Easy"],
   author: "TheySix",

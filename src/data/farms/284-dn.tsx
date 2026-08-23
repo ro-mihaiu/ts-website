@@ -8,7 +8,7 @@ export const farm: FarmData = {
   worldDownloadUrl: "link",
   youtubeUrl: "https://www.youtube.com/watch?v=trvEhfLU3lA",
   version: "1.21+",
-  rates: "81,000 P/H",
+  rates: "81k P/H",
   difficulty: "Easy",
   tags: ["Java", "Super Smelter", "AFK"],
   author: "TheySix",

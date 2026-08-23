@@ -9,7 +9,7 @@ export const farm: FarmData = {
   schematicUrl: "https://www.mediafire.com/file/mkmbv8ztbziw015/TheySix+-+NFX+MobXP+Farm+V1.litematic/file",
   youtubeUrl: "https://www.youtube.com/watch?v=aXrG4SWkVsI",
   version: "1.21+",
-  rates: "69,000/HR",
+  rates: "69k/HR",
   difficulty: "Easy",
   tags: ["Java", "XP", "AFK", "Easy"],
   author: "TheySix",

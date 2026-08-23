@@ -9,7 +9,7 @@ export const farm: FarmData = {
   schematicUrl: "https://www.mediafire.com/file/dbr2ahp3o4jfmmo/NEW+UV2+ULTRA+RAID+FARM.litematic/file",
   youtubeUrl: "https://www.youtube.com/watch?v=VcPIcV2Z5r0",
   version: "1.20+",
-  rates: "4,000+ Emeralds/hr",
+  rates: "4k+ Emeralds/hr",
   difficulty: "Easy",
   tags: ["Java", "Raid"],
   author: "TheySix",

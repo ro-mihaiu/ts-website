@@ -9,7 +9,7 @@ export const farm: FarmData = {
   schematicUrl: "https://www.mediafire.com/file/fbk1yeactbxdrej/TheySix+-+Enderman+XP+Farm+NEW+V1.litematic/file",
   youtubeUrl: "https://www.youtube.com/watch?v=qyaQlQzRnRc",
   version: "1.20.1+",
-  rates: "500,000+ XP/hr",
+  rates: "500k+ XP/hr",
   difficulty: "Easy",
   tags: ["Java", "XP", "AFK", "Easy"],
   author: "TheySix",

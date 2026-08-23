@@ -9,7 +9,7 @@ export const farm: FarmData = {
   schematicUrl: "https://www.mediafire.com/file/59pgmw06lvddv9a/TheySix+-+NEW+SugarCaneFarm+4OBS+V1.litematic/file",
   youtubeUrl: "https://www.youtube.com/watch?v=dGb-dboet-w",
   version: "1.20+",
-  rates: "4,500+ Sugar Cane/hr",
+  rates: "4.5k+ Sugar Cane/hr",
   difficulty: "Easy",
   tags: ["Java", "Sugar Cane"],
   author: "TheySix",

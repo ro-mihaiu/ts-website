@@ -8,7 +8,7 @@ export const farm: FarmData = {
   worldDownloadUrl: "link",
   youtubeUrl: "https://www.youtube.com/watch?v=a-uP7WZvgmc",
   version: "1.21+",
-  rates: "+900,000 PER HOUR !",
+  rates: "+900k PER HOUR !",
   difficulty: "Easy",
   tags: ["Java", "TNT Quarry & Perimeter", "AFK"],
   author: "TheySix",

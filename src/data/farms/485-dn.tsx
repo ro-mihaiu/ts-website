@@ -8,7 +8,7 @@ export const farm: FarmData = {
   worldDownloadUrl: "https://www.mediafire.com/file_premium/nx22g8wlm0cit4s/TheySix_-_NNSF_V1.rar/file",
   youtubeUrl: "https://www.youtube.com/watch?v=rnBNMO-7Grg",
   version: "1.21+",
-  rates: "~+49,000 ~ 49,300 A HOUR!",
+  rates: "~+49k ~ 49k A HOUR!",
   difficulty: "Easy",
   tags: ["Java", "Cobblestone & Stone", "Infinite"],
   author: "TheySix",

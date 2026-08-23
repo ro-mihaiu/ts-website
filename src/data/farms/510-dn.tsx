@@ -8,7 +8,7 @@ export const farm: FarmData = {
   worldDownloadUrl: "link",
   youtubeUrl: "https://www.youtube.com/watch?v=pfVYmMo1dk4",
   version: "1.21++",
-  rates: "1,530 In 5 Min",
+  rates: "1.5k In 5 Min",
   difficulty: "Easy",
   tags: ["Java", "Raid", "Easy"],
   author: "TheySix",

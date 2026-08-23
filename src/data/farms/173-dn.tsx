@@ -9,7 +9,7 @@ export const farm: FarmData = {
   schematicUrl: "https://www.mediafire.com/file/8t9rpyxbbmkz2yu/NEW_Sand_Duper_V1_JE-M.litematic/file",
   youtubeUrl: "https://www.youtube.com/watch?v=XMhSAqYNpgc",
   version: "1.19.4+",
-  rates: "+ 71000 ~ +72000 PER HOUR -",
+  rates: "+ 71k ~ +72k PER HOUR -",
   difficulty: "Easy",
   tags: ["Java", "Sand Duper"],
   author: "TheySix",

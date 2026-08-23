@@ -8,7 +8,7 @@ export const farm: FarmData = {
   worldDownloadUrl: "link",
   youtubeUrl: "https://www.youtube.com/watch?v=x9boajwducU",
   version: "1.21+",
-  rates: "+653/500,300 PER HOUR!",
+  rates: "+653/500k PER HOUR!",
   difficulty: "Easy",
   tags: ["Java", "Sugar Cane", "AFK"],
   author: "TheySix",

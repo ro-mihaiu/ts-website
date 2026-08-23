@@ -8,7 +8,7 @@ export const farm: FarmData = {
   worldDownloadUrl: "https://www.mediafire.com/file_premium/53a5bc5u6l40rvf/TheySix_-_Slime_Farm_NEW_V1C.rar/file",
   youtubeUrl: "https://www.youtube.com/watch?v=77n570T2IiQ",
   version: "1.20.1+",
-  rates: "10,000+ Drops/hr",
+  rates: "10k+ Drops/hr",
   difficulty: "Easy",
   tags: ["Java", "Mob", "AFK"],
   author: "TheySix",

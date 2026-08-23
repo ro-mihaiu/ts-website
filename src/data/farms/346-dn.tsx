@@ -8,7 +8,7 @@ export const farm: FarmData = {
   worldDownloadUrl: "link",
   youtubeUrl: "https://www.youtube.com/watch?v=GiV5S4pNjP0",
   version: "1.21+",
-  rates: "~+60 Levels / 6 ~ 10 stacks of slime Per Each Oozing/Infested Potions [Range Equal to 3 Minutes] 280,000 Strings",
+  rates: "~+60 Levels / 6 ~ 10 stacks of slime Per Each Oozing/Infested Potions [Range Equal to 3 Minutes] 280k Strings",
   difficulty: "Easy",
   tags: ["Java", "Slime", "AFK"],
   author: "TheySix",

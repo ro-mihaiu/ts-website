@@ -8,7 +8,7 @@ export const farm: FarmData = {
   worldDownloadUrl: "link",
   youtubeUrl: "https://www.youtube.com/watch?v=blfZ0BpMJ_E",
   version: "1.21+",
-  rates: "+11200 ~ +13,250 Per Hour ! / 4 Iron golems per 7s",
+  rates: "+11k ~ +13k Per Hour ! / 4 Iron golems per 7s",
   difficulty: "Easy",
   tags: ["Java", "Iron", "AFK"],
   author: "TheySix",

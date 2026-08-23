@@ -8,7 +8,7 @@ export const farm: FarmData = {
   worldDownloadUrl: "https://www.mediafire.com/file/tg53v1edp8z98aq/TheySix+-+STR+F+V1.rar/file",
   youtubeUrl: "https://www.youtube.com/watch?v=Zp07_1eGsdk",
   version: "1.21+",
-  rates: "10,000+ String/hr",
+  rates: "10k+ String/hr",
   difficulty: "Easy",
   tags: ["Java", "String", "Easy", "Infinite"],
   author: "TheySix",

@@ -8,7 +8,7 @@ export const farm: FarmData = {
   worldDownloadUrl: "link",
   youtubeUrl: "https://www.youtube.com/watch?v=PVFV0q0qkBg",
   version: "1.20+",
-  rates: "+8500 ~+9000 PER HOUR !",
+  rates: "+8.5k ~+9k PER HOUR !",
   difficulty: "Easy",
   tags: ["Java", "Bonemeal", "AFK"],
   author: "TheySix",

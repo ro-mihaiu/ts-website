@@ -9,7 +9,7 @@ export const farm: FarmData = {
   schematicUrl: "https://www.mediafire.com/file/e18j6j090lo9fub/APB+Witch+Farm+NEW+V1.litematic/file",
   youtubeUrl: "https://www.youtube.com/watch?v=PHgmcBrXX2U",
   version: "1.20+",
-  rates: "+ 4,500 ~ +5,000 PER HOUR -",
+  rates: "+ 4.5k ~ +5k PER HOUR -",
   difficulty: "Easy",
   tags: ["Java", "Witch", "Easy"],
   author: "TheySix",

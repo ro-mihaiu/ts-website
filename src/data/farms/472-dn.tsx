@@ -9,7 +9,7 @@ export const farm: FarmData = {
   schematicUrl: "https://www.mediafire.com/file/ifwn7kkvwwge7no/TheySix+-+CFX2+RF+V1.litematic/file",
   youtubeUrl: "https://www.youtube.com/watch?v=_ALcRqmzHP0",
   version: "1.21+",
-  rates: "2,500+ Gunpowder/hr",
+  rates: "2.5k+ Gunpowder/hr",
   difficulty: "Easy",
   tags: ["Java", "Creeper", "AFK"],
   author: "TheySix",

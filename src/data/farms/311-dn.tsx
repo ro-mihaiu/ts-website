@@ -8,7 +8,7 @@ export const farm: FarmData = {
   worldDownloadUrl: "link",
   youtubeUrl: "https://www.youtube.com/watch?v=55FD7kmDFig",
   version: "1.21+",
-  rates: "+26,300 PER HOUR",
+  rates: "+26k PER HOUR",
   difficulty: "Easy",
   tags: ["Java", "Cobblestone & Stone", "AFK"],
   author: "TheySix",

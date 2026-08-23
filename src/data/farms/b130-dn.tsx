@@ -1,7 +1,9 @@
 import type { FarmData } from "@/types/farm";
 
 export const farm: FarmData = {
+  dn: "b130",
   title: "The ONLY 1.21 Iron Farm You’ll Ever Need for Minecraft Bedrock!",
+  category: "bedrock",
   farmType: "Iron",
   description: "Comprehensive Minecraft Bedrock tutorial and build blueprint for The ONLY 1.21 Iron Farm You’ll Ever Need for Minecraft Bedrock!. Designed by TheySix for high efficiency, reliability, and ease of construction in survival mode.",
   worldDownloadUrl: "https://www.mediafire.com/file/tgkwxsfgc6cx3il/IR+XRrV1.mcworld/file",
@@ -9,9 +11,10 @@ export const farm: FarmData = {
   version: "1.21+",
   rates: "21 Iron",
   difficulty: "Easy",
-  tags: ["Bedrock","Iron","AFK"],
+  tags: ["Bedrock","Iron","AFK","Easy"],
   author: "TheySix",
   date: "2025-11-13",
+  
   featured: false,
 };
 

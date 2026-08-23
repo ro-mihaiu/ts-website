@@ -8,7 +8,7 @@ export const farm: FarmData = {
   worldDownloadUrl: "https://www.mediafire.com/file/t804kj636juqokf/TheySix+-+SrX+TF+V1.rar/file",
   youtubeUrl: "https://www.youtube.com/watch?v=wY85ZPlZaCc",
   version: "1.21++",
-  rates: "32,000 Logs",
+  rates: "32k Logs",
   difficulty: "Easy",
   tags: ["Java", "Wood", "Easy"],
   author: "TheySix",

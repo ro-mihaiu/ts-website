@@ -9,7 +9,7 @@ export const farm: FarmData = {
   schematicUrl: "https://www.mediafire.com/file/ueni1rdbul3hr45/%5B_1.20_%5D_NEW_Sniffer_-_TFS_Farm_V1.litematic/file",
   youtubeUrl: "https://www.youtube.com/watch?v=BViCiUBjexo",
   version: "1.20+",
-  rates: "+1 Pink Petal Per 1 Bone Meal / Each Sniffer +56 ~ 64 Torch Flower Seeds Per hour / +1300 Bamboos Per Hour",
+  rates: "+1 Pink Petal Per 1 Bone Meal / Each Sniffer +56 ~ 64 Torch Flower Seeds Per hour / +1.3k Bamboos Per Hour",
   difficulty: "Easy",
   tags: ["Java"],
   author: "TheySix",

@@ -8,7 +8,7 @@ export const farm: FarmData = {
   worldDownloadUrl: "link",
   youtubeUrl: "https://www.youtube.com/watch?v=DZRmjnRP4C4",
   version: "1.20+",
-  rates: "+ 3700 ~ +6700 PER HOUR -",
+  rates: "+ 3.7k ~ +6.7k PER HOUR -",
   difficulty: "Easy",
   tags: ["Java", "Creeper", "AFK"],
   author: "TheySix",

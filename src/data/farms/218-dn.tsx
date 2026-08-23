@@ -8,7 +8,7 @@ export const farm: FarmData = {
   worldDownloadUrl: "https://www.mediafire.com/file/6qwt511po1gfrb9/TheySix+-+RAID+FARM+UV3.rar/file",
   youtubeUrl: "https://www.youtube.com/watch?v=8pEKm1_anFM",
   version: "1.20.1+",
-  rates: "4,000+ Emeralds/hr",
+  rates: "4k+ Emeralds/hr",
   difficulty: "Easy",
   tags: ["Java", "Raid", "Easy"],
   author: "TheySix",

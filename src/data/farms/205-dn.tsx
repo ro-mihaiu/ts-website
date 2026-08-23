@@ -9,7 +9,7 @@ export const farm: FarmData = {
   schematicUrl: "https://www.mediafire.com/file/us7hasxtvixrs7s/TheySix+-+Slime+Farm+PB+NEW+V1+[M].litematic/file",
   youtubeUrl: "https://www.youtube.com/watch?v=j-gKv-LCGOg",
   version: "1.20.1+",
-  rates: "10,000+ Drops/hr",
+  rates: "10k+ Drops/hr",
   difficulty: "Easy",
   tags: ["Java", "Mob", "AFK", "Easy"],
   author: "TheySix",

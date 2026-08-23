@@ -9,7 +9,7 @@ export const farm: FarmData = {
   schematicUrl: "https://www.mediafire.com/file/hxy464ysfy3fhbf/NEW_SGC_Creeper_Farm_V2.litematic/file",
   youtubeUrl: "https://www.youtube.com/watch?v=hrKFTTMMTo4",
   version: "1.20+",
-  rates: "12,000+ Gunpowder/hr",
+  rates: "12k+ Gunpowder/hr",
   difficulty: "Easy",
   tags: ["Java", "Creeper", "AFK"],
   author: "TheySix",

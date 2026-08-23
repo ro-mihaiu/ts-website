@@ -9,7 +9,7 @@ export const farm: FarmData = {
   schematicUrl: "https://www.mediafire.com/file/by9obeu8hpkbkvw/TheySix+-+AutoHarvester+SBV1+NEW.litematic/file",
   youtubeUrl: "https://www.youtube.com/watch?v=ZtSfp5r5q3E",
   version: "1.20+",
-  rates: "4,500+ Sugar Cane/hr",
+  rates: "4.5k+ Sugar Cane/hr",
   difficulty: "Easy",
   tags: ["Java", "Sugar Cane"],
   author: "TheySix",

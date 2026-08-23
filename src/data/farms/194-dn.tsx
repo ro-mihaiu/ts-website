@@ -9,7 +9,7 @@ export const farm: FarmData = {
   schematicUrl: "https://www.mediafire.com/file/4vyf5a8dubqxlg4/TheySix+-+NEW+Hoglin+Farm+V1.litematic/file",
   youtubeUrl: "https://www.youtube.com/watch?v=4qtFhARO56c",
   version: "1.20+",
-  rates: "176,000/HR",
+  rates: "176k/HR",
   difficulty: "Easy",
   tags: ["Java", "Mob", "AFK"],
   author: "TheySix",

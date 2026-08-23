@@ -9,7 +9,7 @@ export const farm: FarmData = {
   schematicUrl: "https://www.mediafire.com/file/3v68gs335spcdxb/Auto_Witch_Farm_V1.litematic/file",
   youtubeUrl: "https://www.youtube.com/watch?v=TrJe3sqnois",
   version: "1.19.4+",
-  rates: "+ 2,000 ~ +2,100 PER HOUR -",
+  rates: "+ 2k ~ +2.1k PER HOUR -",
   difficulty: "Easy",
   tags: ["Java", "Witch"],
   author: "TheySix",

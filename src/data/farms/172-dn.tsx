@@ -9,7 +9,7 @@ export const farm: FarmData = {
   schematicUrl: "https://www.mediafire.com/file/jlxgqoakgf1jap5/NEW_Wood_Farm_V1_-_%5B_UPDATE_%5D.litematic/file",
   youtubeUrl: "https://www.youtube.com/watch?v=Flme4cb2WWI",
   version: "1.19.4+",
-  rates: "15,000+ Logs/hr",
+  rates: "15k+ Logs/hr",
   difficulty: "Easy",
   tags: ["Java", "Wood", "Easy"],
   author: "TheySix",

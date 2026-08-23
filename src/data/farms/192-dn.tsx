@@ -9,7 +9,7 @@ export const farm: FarmData = {
   schematicUrl: "https://www.mediafire.com/file/eyxizbddfwudpiw/NEW+CS+FARM+V1.litematic/file",
   youtubeUrl: "https://www.youtube.com/watch?v=p_5P3PH34F0",
   version: "1.20+",
-  rates: "+100,500 ~ +110,000 PER HOUR !",
+  rates: "+101k ~ +110k PER HOUR !",
   difficulty: "Easy",
   tags: ["Java", "Cobblestone & Stone"],
   author: "TheySix",

@@ -8,7 +8,7 @@ export const farm: FarmData = {
   worldDownloadUrl: "https://www.mediafire.com/file/njq9y9pij37llu0/TheySix+-+StackingRaidFarmNEW+V3.rar/file",
   youtubeUrl: "https://www.youtube.com/watch?v=cVYXGUq6j1Q",
   version: "1.20.1+",
-  rates: "4,000+ Emeralds/hr",
+  rates: "4k+ Emeralds/hr",
   difficulty: "Easy",
   tags: ["Java", "Raid", "Infinite"],
   author: "TheySix",

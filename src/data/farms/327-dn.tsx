@@ -8,7 +8,7 @@ export const farm: FarmData = {
   worldDownloadUrl: "link",
   youtubeUrl: "https://www.youtube.com/watch?v=tKKedsW8ljw",
   version: "1.21+",
-  rates: "+2,350/Shells +1,175 Shulker Boxs PER HOUR -",
+  rates: "+2.4k/Shells +1.2k Shulker Boxs PER HOUR -",
   difficulty: "Easy",
   tags: ["Java", "Shulker", "AFK"],
   author: "TheySix",

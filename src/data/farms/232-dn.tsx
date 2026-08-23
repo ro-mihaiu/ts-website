@@ -8,7 +8,7 @@ export const farm: FarmData = {
   worldDownloadUrl: "https://www.mediafire.com/file/2vj3firbbjf20z2/TheySix+-+New+Shulker+Farm+V1XN.rar/file",
   youtubeUrl: "https://www.youtube.com/watch?v=XG0CzDsAnIA",
   version: "1.20+",
-  rates: "+ 950 ~ +4500 PER HOUR -",
+  rates: "+ 950 ~ +4.5k PER HOUR -",
   difficulty: "Easy",
   tags: ["Java", "Shulker"],
   author: "TheySix",

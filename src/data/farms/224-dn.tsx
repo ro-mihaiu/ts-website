@@ -8,7 +8,7 @@ export const farm: FarmData = {
   worldDownloadUrl: "https://www.mediafire.com/file/qum5fj3509xtvb9/TheySix+-+Ultra+Stone+Farm+NEWV1.rar/file",
   youtubeUrl: "https://www.youtube.com/watch?v=xfuGSufZY44",
   version: "1.20.1+",
-  rates: "250,000 PER/H",
+  rates: "250k PER/H",
   difficulty: "Easy",
   tags: ["Java", "Cobblestone & Stone", "Infinite"],
   author: "TheySix",

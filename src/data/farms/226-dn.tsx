@@ -8,7 +8,7 @@ export const farm: FarmData = {
   worldDownloadUrl: "https://www.mediafire.com/file/e4pzp3zc5d52ype/TheySix+-+Super+Smelter+UFSG+V1.rar/file",
   youtubeUrl: "",
   version: "1.20.1+",
-  rates: "30,000+ Items/hr",
+  rates: "30k+ Items/hr",
   difficulty: "Easy",
   tags: ["Java", "Super Smelter"],
   author: "TheySix",

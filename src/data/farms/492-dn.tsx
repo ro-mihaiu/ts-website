@@ -8,7 +8,7 @@ export const farm: FarmData = {
   worldDownloadUrl: "https://www.mediafire.com/file_premium/a63r6vaamldipqc/TheySix_-_RTTxF_V1.zip/file",
   youtubeUrl: "https://www.youtube.com/watch?v=leUUc28UxKs",
   version: "1.21+",
-  rates: "1,500+ Totems & Emeralds/hr",
+  rates: "1.5k+ Totems & Emeralds/hr",
   difficulty: "Easy",
   tags: ["Java", "Raid"],
   author: "TheySix",

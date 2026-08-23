@@ -8,7 +8,7 @@ export const farm: FarmData = {
   worldDownloadUrl: "https://www.mediafire.com/file/3hv770su8tw3lx3/TheySix+-+NEW+IRON+FARM+V1JR.rar/file",
   youtubeUrl: "https://www.youtube.com/watch?v=iPe5lbEjVxI",
   version: "1.20+",
-  rates: "10000 P/HR",
+  rates: "10k P/HR",
   difficulty: "Easy",
   tags: ["Java", "Iron", "AFK"],
   author: "TheySix",

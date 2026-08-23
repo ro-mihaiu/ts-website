@@ -9,7 +9,7 @@ export const farm: FarmData = {
   schematicUrl: "https://www.mediafire.com/file/qfr9hswajmxrax1/TS+-+MRX+SM+V1.litematic/file",
   youtubeUrl: "https://www.youtube.com/watch?v=yqc27xjPXpk",
   version: "1.21+",
-  rates: "5,000+ Bonemeal/hr",
+  rates: "5k+ Bonemeal/hr",
   difficulty: "Easy",
   tags: ["Java", "Bonemeal", "Infinite"],
   author: "TheySix",
