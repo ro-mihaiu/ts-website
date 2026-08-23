@@ -22,8 +22,8 @@ const config: Config = {
         mc: {
           green: "#2ecc71",
           emerald: "#10b981",
-          bedrock: "#e11d48",
-          java: "#ea580c",
+          bedrock: "#f1f5f9",
+          java: "#9fff99",
           cyan: "#06b6d4",
           blue: "#3b82f6",
           purple: "#a855f7",

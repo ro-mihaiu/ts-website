@@ -2,7 +2,7 @@
 
 import React, { useState, useMemo, useEffect } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
-import { Search, SlidersHorizontal, Layers, Sparkles, X, ChevronLeft, ChevronRight, Filter } from "lucide-react";
+import { Search, SlidersHorizontal, Coffee, Box, X, ChevronLeft, ChevronRight, Filter } from "lucide-react";
 import { FarmCard } from "@/components/FarmCard";
 import type { FarmWithMetadata } from "@/types/farm";
 
@@ -216,13 +216,13 @@ export function FarmGrid({ initialFarms }: FarmGridProps) {
               onClick={() => handleCategoryChange("java")}
               className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 ${
                 selectedCategory === "java"
-                  ? "bg-amber-600 text-white shadow-lg shadow-amber-600/20"
+                  ? "bg-[#9fff99] text-slate-950 shadow-lg shadow-[#9fff99]/25 font-bold"
                   : "bg-slate-900 text-slate-400 hover:text-white hover:bg-slate-800 border border-slate-800"
               }`}
             >
-              <Layers className="w-3.5 h-3.5" />
+              <Coffee className="w-3.5 h-3.5" />
               <span>Java Edition</span>
-              <span className="px-1.5 py-0.2 rounded bg-black/30 text-[11px] font-mono">
+              <span className={`px-1.5 py-0.2 rounded text-[11px] font-mono ${selectedCategory === "java" ? "bg-black/20 text-slate-950 font-bold" : "bg-black/30"}`}>
                 {javaCount}
               </span>
             </button>
@@ -231,13 +231,13 @@ export function FarmGrid({ initialFarms }: FarmGridProps) {
               onClick={() => handleCategoryChange("bedrock")}
               className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 ${
                 selectedCategory === "bedrock"
-                  ? "bg-rose-600 text-white shadow-lg shadow-rose-600/20"
+                  ? "bg-slate-100 text-slate-950 shadow-lg shadow-white/20 font-bold"
                   : "bg-slate-900 text-slate-400 hover:text-white hover:bg-slate-800 border border-slate-800"
               }`}
             >
-              <Sparkles className="w-3.5 h-3.5" />
+              <Box className="w-3.5 h-3.5" />
               <span>Bedrock Edition</span>
-              <span className="px-1.5 py-0.2 rounded bg-black/30 text-[11px] font-mono">
+              <span className={`px-1.5 py-0.2 rounded text-[11px] font-mono ${selectedCategory === "bedrock" ? "bg-black/20 text-slate-950 font-bold" : "bg-black/30"}`}>
                 {bedrockCount}
               </span>
             </button>

@@ -20,6 +20,7 @@ export interface FarmMaterialItem {
   count: number;
   stacks?: string;
   color?: string;
+  icon?: string;
 }
 
 export type FarmMaterialInput = FarmMaterialItem | string;

@@ -38,7 +38,7 @@ export default function ServerMainPage() {
         </h1>
 
         <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed">
-          The official community server built for survival enthusiasts, redstone engineers, and mega-builders. Fully compatible with both <strong className="text-amber-400 font-semibold">Java</strong> and <strong className="text-rose-400 font-semibold">Bedrock</strong> editions.
+          The official community server built for survival enthusiasts, redstone engineers, and mega-builders. Fully compatible with both <strong className="text-[#9fff99] font-semibold">Java</strong> and <strong className="text-slate-200 font-semibold">Bedrock</strong> editions.
         </p>
 
         {/* Event Manager Highlight Box */}
@@ -50,7 +50,7 @@ export default function ServerMainPage() {
             All server events, tournaments, and community competitions are personally organized and managed by <a
               href="https://discord.ro-mihaiu.xyz"
               target="_blank"
-              rel="noopener noreferrer"        
+              rel="noopener noreferrer"
             >
             <strong className="text-amber-300 font-bold underline decoration-amber-400/50 underline-offset-2">ro_mihaiu</strong>.
             </a>
@@ -81,7 +81,7 @@ export default function ServerMainPage() {
 
           <div className="p-4 rounded-2xl bg-slate-950/80 border border-slate-800 space-y-1.5">
             <span className="text-slate-500 font-mono uppercase font-semibold">Bedrock Edition IP & Port</span>
-            <div className="font-mono text-rose-300 font-bold text-sm select-all">
+            <div className="font-mono text-slate-100 font-bold text-sm select-all">
               theysix.sparked.host:19132
             </div>
             <span className="text-[11px] text-slate-400">Bedrock iOS / Android / Win10 / Console</span>

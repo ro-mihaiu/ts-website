@@ -5,7 +5,7 @@ import type { FarmCategory, FarmData, FarmWithMetadata, FarmMaterialItem } from 
 /**
  * Format a material item with calculated stacks and theme color
  */
-export function formatMaterialItem(name: string, count: number, customColor?: string): FarmMaterialItem {
+export function formatMaterialItem(name: string, count: number, customColor?: string, customIcon?: string): FarmMaterialItem {
   const stacksCount = Math.floor(count / 64);
   const remainder = count % 64;
   let stacks = "";
@@ -39,7 +39,7 @@ export function formatMaterialItem(name: string, count: number, customColor?: st
   else if (nl.includes("quartz") || nl.includes("concrete")) color = "#eaeaea";
   else if (nl.includes("emerald")) color = "#10b981";
 
-  return { name, count, stacks, color };
+  return { name, count, stacks, color, icon: customIcon };
 }
 
 /**
@@ -228,13 +228,14 @@ function parseFarmFileContent(content: string, filename: string): FarmData {
       const inner = matMatch[1];
       const parsedMatList: FarmMaterialItem[] = [];
 
-      // Try object matches { name: "...", count: 123 }
-      const objRegex = /\{[\s\S]*?name\s*:\s*["'`]?([^"',`]+)["'`]?[\s\S]*?count\s*:\s*(\d+)[\s\S]*?\}/gi;
+      // Try object matches { name: "...", count: 123, icon?: "..." }
+      const objRegex = /\{[\s\S]*?name\s*:\s*["'`]?([^"',`]+)["'`]?[\s\S]*?count\s*:\s*(\d+)(?:[\s\S]*?icon\s*:\s*["'`]?([^"',`]+)["'`]?)?[\s\S]*?\}/gi;
       let matchObj;
       while ((matchObj = objRegex.exec(inner)) !== null) {
         const name = matchObj[1].trim();
         const count = parseInt(matchObj[2], 10) || 1;
-        parsedMatList.push(formatMaterialItem(name, count));
+        const icon = matchObj[3]?.trim();
+        parsedMatList.push(formatMaterialItem(name, count, undefined, icon));
       }
 
       // If string array

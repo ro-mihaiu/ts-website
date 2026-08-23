@@ -30,7 +30,7 @@ const socialsData = [
     color: "from-red-600 to-rose-700",
     hoverBg: "hover:border-red-500/50",
     badge: "Java Edition",
-    badgeColor: "bg-amber-500/10 text-amber-300 border-amber-500/30",
+    badgeColor: "bg-[#9fff99]/10 text-[#9fff99] border-[#9fff99]/30",
   },
   {
     name: "YouTube (Bedrock Edition)",
@@ -41,7 +41,7 @@ const socialsData = [
     color: "from-red-500 to-pink-600",
     hoverBg: "hover:border-rose-500/50",
     badge: "Bedrock Edition",
-    badgeColor: "bg-rose-500/10 text-rose-300 border-rose-500/30",
+    badgeColor: "bg-white/10 text-slate-100 border-white/20",
   },
   {
     name: "YouTube (Minecraft Builds)",
@@ -85,7 +85,7 @@ const socialsData = [
     color: "from-slate-700 to-slate-900",
     hoverBg: "hover:border-rose-500/50",
     badge: "TikTok Bedrock",
-    badgeColor: "bg-rose-500/10 text-rose-300 border-rose-500/30",
+    badgeColor: "bg-white/10 text-slate-100 border-white/20",
   },
   {
     name: "Instagram",

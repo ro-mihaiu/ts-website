@@ -13,6 +13,7 @@ import {
   Boxes,
   CheckCircle2
 } from "lucide-react";
+import { ItemIcon } from "@/components/ItemIcon";
 import type { FarmMaterialItem } from "@/types/farm";
 
 interface MaterialListChecklistProps {
@@ -165,8 +166,8 @@ export function MaterialListChecklist({
         <div className="w-full bg-slate-900 rounded-full h-2 overflow-hidden border border-slate-800">
           <div
             className={`h-full transition-all duration-500 rounded-full ${
-              isAllDone 
-                ? "bg-gradient-to-r from-emerald-500 to-teal-400 shadow-md shadow-emerald-500/30" 
+              isAllDone
+                ? "bg-gradient-to-r from-emerald-500 to-teal-400 shadow-md shadow-emerald-500/30"
                 : "bg-gradient-to-r from-amber-500 to-cyan-400"
             }`}
             style={{ width: `${progressPercent}%` }}
@@ -246,10 +247,12 @@ export function MaterialListChecklist({
                   <Check className="w-3.5 h-3.5 stroke-[3]" />
                 </div>
 
-                {/* Color Dot */}
-                <div
-                  className="w-3.5 h-3.5 rounded-md border border-white/20 shadow-sm shrink-0"
-                  style={{ backgroundColor: mat.color || "#888888" }}
+                {/* Item Icon from /items/<item>.png (with fallback) */}
+                <ItemIcon
+                  name={mat.name}
+                  color={mat.color}
+                  icon={mat.icon}
+                  className="w-5 h-5"
                 />
 
                 {/* Name & Stacks */}

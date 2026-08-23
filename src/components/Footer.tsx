@@ -46,12 +46,12 @@ export function Footer() {
             <h3 className="text-xs font-bold text-slate-200 tracking-wider uppercase font-mono">Farms & Community</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/?category=java" className="hover:text-cyan-400 transition-colors">
+                <Link href="/?category=java" className="hover:text-[#9fff99] transition-colors">
                   Java Edition Farms
                 </Link>
               </li>
               <li>
-                <Link href="/?category=bedrock" className="hover:text-rose-400 transition-colors">
+                <Link href="/?category=bedrock" className="hover:text-slate-200 transition-colors">
                   Bedrock Edition Farms
                 </Link>
               </li>

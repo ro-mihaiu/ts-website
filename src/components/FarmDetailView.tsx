@@ -7,8 +7,8 @@ import {
   Download,
   FileCode,
   Youtube,
-  Layers,
-  Sparkles,
+  Coffee,
+  Box,
   Calendar,
   User,
   Gauge,
@@ -64,13 +64,13 @@ export function FarmDetailView({ farm, relatedFarms }: FarmDetailViewProps) {
         {/* Badges / Edition info */}
         <div className="flex items-center gap-2">
           <span
-            className={`inline-flex items-center gap-1 px-3 py-1 rounded-lg text-xs font-bold font-mono uppercase tracking-wide border shadow-sm ${
+            className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-bold font-mono uppercase tracking-wide border shadow-sm ${
               isJava
-                ? "bg-amber-500/10 text-amber-300 border-amber-500/30"
-                : "bg-rose-500/10 text-rose-300 border-rose-500/30"
+                ? "bg-[#9fff99]/10 text-[#9fff99] border-[#9fff99]/30"
+                : "bg-white/10 text-slate-100 border-white/20"
             }`}
           >
-            {isJava ? <Layers className="w-3.5 h-3.5" /> : <Sparkles className="w-3.5 h-3.5" />}
+            {isJava ? <Coffee className="w-3.5 h-3.5" /> : <Box className="w-3.5 h-3.5" />}
             {isJava ? "Minecraft Java" : "Minecraft Bedrock"}
           </span>
 
@@ -206,7 +206,7 @@ export function FarmDetailView({ farm, relatedFarms }: FarmDetailViewProps) {
                   <div className="text-left">
                     <div className="text-sm">World Download</div>
                     <div className="text-[11px] font-normal text-cyan-100 font-mono">
-                      {isJava ? ".zip world save" : ".mcworld save"}
+                      {isJava ? ".rar world save" : ".mcworld save"}
                     </div>
                   </div>
                 </div>
@@ -222,13 +222,13 @@ export function FarmDetailView({ farm, relatedFarms }: FarmDetailViewProps) {
                       href={farm.schematicUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-between w-full p-4 rounded-2xl bg-amber-600 hover:bg-amber-500 text-white font-bold transition-all shadow-lg shadow-amber-600/20 group"
+                      className="flex items-center justify-between w-full p-4 rounded-2xl bg-[#9fff99] hover:bg-[#86efac] text-slate-950 font-bold transition-all shadow-lg shadow-[#9fff99]/20 group"
                     >
                       <div className="flex items-center gap-3">
                         <FileCode className="w-5 h-5 group-hover:scale-110 transition-transform" />
                         <div className="text-left">
                           <div className="text-sm">Schematic File</div>
-                          <div className="text-[11px] font-normal text-amber-100 font-mono">
+                          <div className="text-[11px] font-normal text-slate-900/80 font-mono">
                             .litematic file (Fabric)
                           </div>
                         </div>
@@ -239,7 +239,7 @@ export function FarmDetailView({ farm, relatedFarms }: FarmDetailViewProps) {
                     {/* Preview Schematic Option */}
                     <button
                       onClick={() => setIsPreviewOpen(true)}
-                      className="flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-xl bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 border border-amber-500/30 text-xs font-semibold transition-all"
+                      className="flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-xl bg-[#9fff99]/10 hover:bg-[#9fff99]/20 text-[#9fff99] border border-[#9fff99]/30 text-xs font-semibold transition-all"
                     >
                       <Eye className="w-4 h-4" />
                       <span>Preview Schematic</span>
@@ -247,9 +247,9 @@ export function FarmDetailView({ farm, relatedFarms }: FarmDetailViewProps) {
                   </div>
                 ) : (
                   /* Missing Schematic Error / Notice with Discord Ticket Button */
-                  <div className="p-4 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-200 space-y-3">
+                  <div className="p-4 rounded-2xl bg-[#9fff99]/10 border border-[#9fff99]/30 text-slate-200 space-y-3">
                     <div className="flex items-start gap-2.5">
-                      <AlertCircle className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
+                      <AlertCircle className="w-5 h-5 text-[#9fff99] shrink-0 mt-0.5" />
                       <p className="text-xs leading-relaxed">
                         This farm doesn&apos;t have a schematic provided, create a ticket and ask nicely for the schematic to be provided.
                       </p>

@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { getAllFarms } from "@/lib/farms";
 import { FarmGrid } from "@/components/FarmGrid";
-import { Sparkles, Layers, Download, Youtube, MessageSquare, ShieldCheck, Zap } from "lucide-react";
+import { Sparkles, Coffee, Box, Download, Youtube, MessageSquare, ShieldCheck, FileCode } from "lucide-react";
 
 export const revalidate = 0; // Dynamic server evaluation
 
@@ -29,24 +29,24 @@ export default function HomePage() {
             </h1>
 
             <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
-              Explore world downloads, Litematica schematics, and step-by-step video tutorials for both 
-              <strong className="text-amber-400 font-semibold"> Java</strong> and 
-              <strong className="text-rose-400 font-semibold"> Bedrock</strong> editions.
+              Explore world downloads, Litematica schematics, and step-by-step video tutorials for both
+              <strong className="text-[#9fff99] font-semibold"> Java</strong> and
+              <strong className="text-slate-200 font-semibold"> Bedrock</strong> editions.
             </p>
 
             {/* Quick Action CTA buttons */}
             <div className="flex flex-wrap items-center justify-center md:justify-start gap-3.5 pt-2">
               <Link
                 href="/?category=java"
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm shadow-lg shadow-amber-500/20 transition-all hover:scale-[1.02]"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-[#9fff99] hover:bg-[#86efac] text-slate-950 font-bold text-sm shadow-lg shadow-[#9fff99]/20 transition-all hover:scale-[1.02]"
               >
-                <Layers className="w-4 h-4" /> Java Farms
+                <Coffee className="w-4 h-4" /> Java Farms
               </Link>
               <Link
                 href="/?category=bedrock"
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-rose-600 hover:bg-rose-500 text-white font-bold text-sm shadow-lg shadow-rose-600/20 transition-all hover:scale-[1.02]"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-slate-100 hover:bg-white text-slate-950 font-bold text-sm shadow-lg shadow-white/20 transition-all hover:scale-[1.02]"
               >
-                <Sparkles className="w-4 h-4" /> Bedrock Farms
+                <Box className="w-4 h-4" /> Bedrock Farms
               </Link>
               <a
                 href="https://discord.gg/theysix"
@@ -81,7 +81,7 @@ export default function HomePage() {
             <span>Instant World Saves</span>
           </div>
           <div className="flex items-center gap-2.5">
-            <Layers className="w-4 h-4 text-amber-400 shrink-0" />
+            <FileCode className="w-4 h-4 text-[#9fff99] shrink-0" />
             <span>Litematica Schematics</span>
           </div>
           <div className="flex items-center gap-2.5">

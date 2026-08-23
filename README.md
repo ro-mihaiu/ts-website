@@ -12,6 +12,12 @@ A modern, lightning-fast Next.js 14 website for **TheySix** to share Minecraft J
   - **Material List (BOM)**: Searchable block count breakdown with Minecraft stack conversions (e.g. `5 stacks + 12 items`) and one-click copy to clipboard.
   - **Multi-Format Support**: Displays and downloads `.litematic`, `.schematic`, `.schem`, and `.nbt` (e.g. `111-dn.litematic`, `111-dn.schematic`, `111-dn.schem`, `111-dn.nbt`).
   - Direct download actions without link copying.
+- **✨ Java & Bedrock Edition Theme & Icons**:
+  - **Java Edition**: Highlighted in `#9fff99` (vibrant green) with Coffee cup icon.
+  - **Bedrock Edition**: Highlighted in `#ffffff` / light grey with Bedrock Block / Cube icon.
+- **🎨 Item Icons in Material List**:
+  - Automatically loads `<item>.png` (or `.webp`/`.svg`) from `/public/items/` for any material in the farm's material list.
+  - Supports automatic snake_case, kebab-case, singular/plural names, and fallback block color indicators.
 - **👁️ View Counts**: Automatic and custom view counter displayed on the bottom-left of each farm card.
 - **⚡ Auto Platform & Slug Detection**:
   - Files without `b` prefix (e.g. `111-dn.tsx`) are automatically classified as **Java Edition**.
@@ -51,6 +57,24 @@ src/
 └── types/
     └── farm.ts           # FarmData, FarmWithMetadata & FarmMaterialItem
 ```
+
+---
+
+## 🎨 How to Add Item Icons for Material Lists
+
+Drop any item icon (`.png`, `.webp`, or `.svg`) directly into `public/items/`:
+
+```
+public/items/
+├── smooth_stone.png
+├── hopper.png
+├── chest.png
+├── water_bucket.png
+├── piston.png
+└── sticky_piston.png
+```
+
+The system will automatically find and display the matching icon for items in the farm checklist!
 
 ---
 

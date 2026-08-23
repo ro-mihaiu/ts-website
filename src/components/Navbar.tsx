@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X, MessageSquare, Compass, Sparkles, Youtube, Layers, Server, Bot } from "lucide-react";
+import { Menu, X, MessageSquare, Compass, Youtube, Coffee, Box, Server, Bot } from "lucide-react";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,8 +12,8 @@ export function Navbar() {
 
   const navLinks = [
     { href: "/", label: "All Farms", icon: Compass },
-    { href: "/?category=java", label: "Java Edition", icon: Layers },
-    { href: "/?category=bedrock", label: "Bedrock Edition", icon: Sparkles },
+    { href: "/?category=java", label: "Java Edition", icon: Coffee },
+    { href: "/?category=bedrock", label: "Bedrock Edition", icon: Box },
     { href: "/server", label: "Minecraft Server", icon: Server },
     { href: "/bot/about", label: "Discord Bot", icon: Bot },
     { href: "/socials", label: "Socials", icon: Youtube },
