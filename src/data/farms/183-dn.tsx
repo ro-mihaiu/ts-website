@@ -11,7 +11,7 @@ export const farm: FarmData = {
   version: "1.20+",
   rates: "500k+ XP/hr",
   difficulty: "Easy",
-  tags: ["Java", "XP", "AFK", "Easy"],
+  tags: ["Java", "Java & Bedrock", "XP", "AFK", "Easy"],
   author: "TheySix",
   date: "2023-06-14",
   views: 9442,

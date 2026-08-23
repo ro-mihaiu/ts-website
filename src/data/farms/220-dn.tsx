@@ -6,7 +6,7 @@ export const farm: FarmData = {
   farmType: "Shulker",
   description: "Comprehensive Minecraft Java tutorial and build blueprint for Minecraft BEST Shulker Box Loader & Unloader 1.20.1 - Tileable & Cheap!. Designed by TheySix for high efficiency, reliability, and ease of construction in survival mode.",
   worldDownloadUrl: "https://www.mediafire.com/file/n1shl4cbnowfado/TheySix+-+Shulker+Un&loader+NEWV1.rar/file",
-  youtubeUrl: "",
+  youtubeUrl: "https://www.youtube.com/watch?v=WK1li_LDpBs",
   version: "1.20.1+",
   difficulty: "Easy",
   tags: ["Java", "Shulker", "Easy"],

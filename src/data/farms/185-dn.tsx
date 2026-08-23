@@ -11,7 +11,7 @@ export const farm: FarmData = {
   version: "1.20+",
   rates: "+ Pushing Each item item in 1s",
   difficulty: "Easy",
-  tags: ["Java", "Storage & Sorter"],
+  tags: ["Java", "Java & Bedrock", "Storage & Sorter"],
   author: "TheySix",
   date: "2023-06-18",
   views: 29107,

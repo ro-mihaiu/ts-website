@@ -11,7 +11,7 @@ export const farm: FarmData = {
   version: "1.19.4+",
   rates: "12k+ Gunpowder/hr",
   difficulty: "Easy",
-  tags: ["Java", "Creeper", "AFK"],
+  tags: ["Java", "Java & Bedrock", "Creeper", "AFK"],
   author: "TheySix",
   date: "2023-06-04",
   views: 31726,

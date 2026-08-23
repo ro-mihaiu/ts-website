@@ -48,6 +48,12 @@ export default function HomePage() {
               >
                 <Box className="w-4 h-4" /> Bedrock Farms
               </Link>
+              <Link
+                href="/?category=both"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-cyan-600 hover:bg-cyan-500 text-white font-bold text-sm shadow-lg shadow-cyan-600/20 transition-all hover:scale-[1.02]"
+              >
+                <span>Both Platforms</span>
+              </Link>
               <a
                 href="https://discord.gg/theysix"
                 target="_blank"

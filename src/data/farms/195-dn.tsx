@@ -11,7 +11,7 @@ export const farm: FarmData = {
   version: "1.20+",
   rates: "4.5k+ Sugar Cane/hr",
   difficulty: "Easy",
-  tags: ["Java", "Sugar Cane"],
+  tags: ["Java", "Java & Bedrock", "Sugar Cane"],
   author: "TheySix",
   date: "2023-07-12",
   views: 77031,

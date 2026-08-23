@@ -2,6 +2,15 @@ import fs from "fs";
 import path from "path";
 import type { FarmCategory, FarmData, FarmWithMetadata, FarmMaterialItem } from "@/types/farm";
 
+export const BOTH_PLATFORMS_TAG = "Both Platforms";
+
+export function farmSupportsBothPlatforms(tags?: string[]): boolean {
+  if (!tags?.length) return false;
+  return tags.some((t) =>
+    /both platforms|both editions|java\s*&\s*bedrock|java and bedrock/i.test(t)
+  );
+}
+
 /**
  * Format a material item with calculated stacks and theme color
  */
@@ -368,6 +377,7 @@ export function getAllFarms(): FarmWithMetadata[] {
       viewsDisplay,
       schematicFiles,
       materials: resolvedMaterials,
+      supportsBothPlatforms: farmSupportsBothPlatforms(parsedData.tags),
     });
   }
 

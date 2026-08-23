@@ -51,11 +51,14 @@ export function FarmGrid({ initialFarms }: FarmGridProps) {
   const filteredFarms = useMemo(() => {
     let result = [...initialFarms];
 
-    // Filter by Category (Java / Bedrock)
-    if (selectedCategory !== "all") {
-      result = result.filter(
-        (farm) => farm.category.toLowerCase() === selectedCategory.toLowerCase()
-      );
+    // Filter by Category (Java / Bedrock / Both Platforms)
+    if (selectedCategory === "both") {
+      result = result.filter((farm) => farm.supportsBothPlatforms);
+    } else if (selectedCategory !== "all") {
+      result = result.filter((farm) => {
+        if (farm.category.toLowerCase() === selectedCategory.toLowerCase()) return true;
+        return farm.supportsBothPlatforms;
+      });
     }
 
     // Filter by Farm Type
@@ -161,6 +164,7 @@ export function FarmGrid({ initialFarms }: FarmGridProps) {
 
   const javaCount = initialFarms.filter((f) => f.category === "java").length;
   const bedrockCount = initialFarms.filter((f) => f.category === "bedrock").length;
+  const bothCount = initialFarms.filter((f) => f.supportsBothPlatforms).length;
 
   const handleCategoryChange = (cat: string) => {
     setSelectedCategory(cat);
@@ -294,6 +298,20 @@ export function FarmGrid({ initialFarms }: FarmGridProps) {
               <span>Bedrock Edition</span>
               <span className={`px-1.5 py-0.2 rounded text-[11px] font-mono ${selectedCategory === "bedrock" ? "bg-black/20 text-slate-950 font-bold" : "bg-black/30"}`}>
                 {bedrockCount}
+              </span>
+            </button>
+
+            <button
+              onClick={() => handleCategoryChange("both")}
+              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 ${
+                selectedCategory === "both"
+                  ? "bg-cyan-600 text-white shadow-lg shadow-cyan-600/20 font-bold"
+                  : "bg-slate-900 text-slate-400 hover:text-white hover:bg-slate-800 border border-slate-800"
+              }`}
+            >
+              <span>Both Platforms</span>
+              <span className={`px-1.5 py-0.2 rounded text-[11px] font-mono ${selectedCategory === "both" ? "bg-black/20 text-white font-bold" : "bg-black/30"}`}>
+                {bothCount}
               </span>
             </button>
           </div>
