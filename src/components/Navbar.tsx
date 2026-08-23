@@ -19,7 +19,7 @@ export function Navbar() {
     { href: "/", label: "All Farms", icon: Compass },
     { href: "/?category=java#farms", label: "Java Edition", icon: JavaLogo },
     { href: "/?category=bedrock#farms", label: "Bedrock Edition", icon: Box },
-    { href: "/?category=build", label: "Builds", icon: Hammer },
+    { href: "/?category=build#farms", label: "Builds", icon: Hammer },
     { href: "/server", label: "Minecraft Server", icon: Server },
     { href: "/bot/about", label: "Discord Bot", icon: Bot },
     { href: "/socials", label: "Socials", icon: Youtube },
