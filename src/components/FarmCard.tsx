@@ -164,7 +164,7 @@ export function FarmCard({ farm }: FarmCardProps) {
           )}
 
           {/* YouTube Tutorial Link */}
-          {farm.youtubeUrl && (
+          {farm.hasYoutube && farm.youtubeUrl ? (
             <a
               href={farm.youtubeUrl}
               target="_blank"
@@ -175,6 +175,15 @@ export function FarmCard({ farm }: FarmCardProps) {
             >
               <Youtube className="w-4 h-4" />
             </a>
+          ) : (
+            <Link
+              href={farmUrl}
+              className="p-2 rounded-xl text-slate-600 hover:text-red-400 hover:bg-red-500/10 border border-slate-800/80 hover:border-slate-700 transition-colors"
+              title="No video link provided - Click to request ticket"
+              aria-label="No video link provided"
+            >
+              <Youtube className="w-4 h-4 opacity-40" />
+            </Link>
           )}
 
           {/* View Details Link */}

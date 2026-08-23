@@ -182,13 +182,16 @@ export function SchematicPreviewModal({ farm, isOpen, onClose }: SchematicPrevie
           {/* TAB 2: MATERIAL LIST & CHECKLIST */}
           {activeTab === "materials" && (
             <div className="space-y-4">
-              <p className="text-xs text-slate-400">
-                Check off materials as you collect them in Minecraft. Your inventory progress is saved automatically.
-              </p>
+              {farm.materials && farm.materials.length > 0 && (
+                <p className="text-xs text-slate-400">
+                  Check off materials as you collect them in Minecraft. Your inventory progress is saved automatically.
+                </p>
+              )}
               <MaterialListChecklist
                 materials={farm.materials || []}
                 farmId={farm.dn}
                 farmTitle={farm.title}
+                youtubeUrl={farm.youtubeUrl}
               />
             </div>
           )}

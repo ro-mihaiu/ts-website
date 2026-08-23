@@ -43,106 +43,6 @@ export function formatMaterialItem(name: string, count: number, customColor?: st
 }
 
 /**
- * Default material list generator based on farm type
- */
-export function getDefaultMaterialsForFarm(farmType: string): FarmMaterialItem[] {
-  const typeLower = farmType.toLowerCase();
-  if (typeLower.includes("creeper") || typeLower.includes("mob") || typeLower.includes("gunpowder")) {
-    return [
-      formatMaterialItem("Building Blocks (Stone Bricks)", 320),
-      formatMaterialItem("Oak / Spruce Trapdoors", 64),
-      formatMaterialItem("Hoppers", 24),
-      formatMaterialItem("Double Chests", 12),
-      formatMaterialItem("Soul Campfires", 16),
-      formatMaterialItem("Tinted / Stained Glass", 128),
-      formatMaterialItem("Cat / Carpet Perches", 8),
-      formatMaterialItem("Stone Slabs (Roof)", 81),
-    ];
-  } else if (typeLower.includes("iron")) {
-    return [
-      formatMaterialItem("Smooth Stone Blocks", 256),
-      formatMaterialItem("Water Buckets", 4),
-      formatMaterialItem("Lava Buckets", 2),
-      formatMaterialItem("Hoppers", 18),
-      formatMaterialItem("Chests", 10),
-      formatMaterialItem("Villager Beds", 6),
-      formatMaterialItem("Oak Fences / Gates", 12),
-      formatMaterialItem("Glass Blocks", 64),
-    ];
-  } else if (typeLower.includes("raid")) {
-    return [
-      formatMaterialItem("Obsidian Blast Shell", 128),
-      formatMaterialItem("Sticky Pistons", 16),
-      formatMaterialItem("Observers", 24),
-      formatMaterialItem("Redstone Dust", 64),
-      formatMaterialItem("Hoppers & Droppers", 32),
-      formatMaterialItem("Soul Sand & Water Columns", 8),
-      formatMaterialItem("Villager Bed & Composter", 2),
-      formatMaterialItem("Double Chests", 16),
-    ];
-  } else if (typeLower.includes("shulker")) {
-    return [
-      formatMaterialItem("Tinted Glass Blocks", 192),
-      formatMaterialItem("Pistons", 16),
-      formatMaterialItem("Observers", 16),
-      formatMaterialItem("Scaffolding", 32),
-      formatMaterialItem("Snow Golem Spawners", 4),
-      formatMaterialItem("Nether Portals / Obsidian", 28),
-      formatMaterialItem("Redstone Repeaters", 8),
-      formatMaterialItem("Hoppers & Chests", 20),
-    ];
-  } else if (typeLower.includes("gold") || typeLower.includes("xp")) {
-    return [
-      formatMaterialItem("Obsidian (Nether Portals)", 140),
-      formatMaterialItem("Flint & Steel / Dispensers", 8),
-      formatMaterialItem("Water Buckets & Dispensers", 8),
-      formatMaterialItem("Trident Killer / Pistons", 12),
-      formatMaterialItem("Redstone Repeaters & Clocks", 16),
-      formatMaterialItem("Hoppers", 24),
-      formatMaterialItem("Chests & Sorters", 16),
-      formatMaterialItem("Solid Blocks", 256),
-    ];
-  } else if (typeLower.includes("wood") || typeLower.includes("tree")) {
-    return [
-      formatMaterialItem("Pistons (Piston Pushers)", 48),
-      formatMaterialItem("Observers", 32),
-      formatMaterialItem("Redstone Dust", 64),
-      formatMaterialItem("Dispensers (Bonemeal)", 8),
-      formatMaterialItem("Hoppers", 16),
-      formatMaterialItem("Solid Building Blocks", 192),
-      formatMaterialItem("Target Blocks", 8),
-      formatMaterialItem("Double Chests", 8),
-    ];
-  } else if (typeLower.includes("stone") || typeLower.includes("cobble")) {
-    return [
-      formatMaterialItem("Water Sources", 8),
-      formatMaterialItem("Lava Sources", 8),
-      formatMaterialItem("Pistons", 24),
-      formatMaterialItem("Observers", 16),
-      formatMaterialItem("Redstone Repeaters", 12),
-      formatMaterialItem("TNT Duper Module (Slime & Coral)", 6),
-      formatMaterialItem("Hoppers", 32),
-      formatMaterialItem("Chests", 16),
-    ];
-  }
-
-  return [
-    formatMaterialItem("Smooth Stone / Solid Blocks", 320),
-    formatMaterialItem("Hoppers", 24),
-    formatMaterialItem("Double Chests", 12),
-    formatMaterialItem("Observers", 32),
-    formatMaterialItem("Sticky Pistons / Pistons", 16),
-    formatMaterialItem("Redstone Dust", 64),
-    formatMaterialItem("Redstone Repeaters / Comparators", 8),
-    formatMaterialItem("Tinted / Stained Glass", 128),
-    formatMaterialItem("Trapdoors", 48),
-    formatMaterialItem("Water Sources", 4),
-    formatMaterialItem("Campfires", 16),
-    formatMaterialItem("Stone Slabs", 81),
-  ];
-}
-
-/**
  * Extract YouTube ID from various YouTube URL formats
  */
 export function extractYouTubeId(url?: string): string | undefined {
@@ -372,8 +272,17 @@ export function getAllFarms(): FarmWithMetadata[] {
     const normalizedDn = dn.replace(/-dn$/i, "").replace(/^b/i, "");
     const id = parsedData.id || dn;
 
-    const youtubeId = extractYouTubeId(parsedData.youtubeUrl);
-    const resolvedThumbnail = getThumbnailUrl(parsedData.youtubeUrl, parsedData.thumbnailUrl);
+    // YouTube link & embed detection
+    const rawYoutube = parsedData.youtubeUrl?.trim() || "";
+    const hasYoutube = Boolean(
+      rawYoutube &&
+      rawYoutube !== "#" &&
+      rawYoutube.toLowerCase() !== "link" &&
+      rawYoutube.length > 0
+    );
+    const youtubeUrl = hasYoutube ? rawYoutube : "";
+    const youtubeId = hasYoutube ? extractYouTubeId(youtubeUrl) : undefined;
+    const resolvedThumbnail = getThumbnailUrl(youtubeUrl, parsedData.thumbnailUrl);
 
     // Calculate deterministic view counts if not explicitly defined
     let calculatedViews = 15200;
@@ -406,7 +315,8 @@ export function getAllFarms(): FarmWithMetadata[] {
       nbt: `${dn}.nbt`,
     };
 
-    const resolvedMaterials = (parsedData.materials as FarmMaterialItem[] | undefined) || getDefaultMaterialsForFarm(parsedData.farmType);
+    const resolvedMaterials = (parsedData.materials as FarmMaterialItem[] | undefined) || [];
+    const hasMaterials = resolvedMaterials.length > 0;
 
     farms.push({
       ...parsedData,
@@ -417,6 +327,9 @@ export function getAllFarms(): FarmWithMetadata[] {
       hasWorldDownload,
       schematicUrl,
       hasSchematic,
+      youtubeUrl,
+      hasYoutube,
+      hasMaterials,
       normalizedDn,
       youtubeId,
       resolvedThumbnail,

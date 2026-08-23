@@ -11,7 +11,10 @@ import {
   Sparkles,
   Layers,
   Boxes,
-  CheckCircle2
+  CheckCircle2,
+  AlertCircle,
+  MessageSquarePlus,
+  Youtube
 } from "lucide-react";
 import { ItemIcon } from "@/components/ItemIcon";
 import type { FarmMaterialItem } from "@/types/farm";
@@ -20,6 +23,7 @@ interface MaterialListChecklistProps {
   materials: FarmMaterialItem[];
   farmId: string;
   farmTitle?: string;
+  youtubeUrl?: string;
   compact?: boolean;
 }
 
@@ -27,6 +31,7 @@ export function MaterialListChecklist({
   materials,
   farmId,
   farmTitle = "Farm Blueprint",
+  youtubeUrl,
   compact = false
 }: MaterialListChecklistProps) {
   const storageKey = `theysix_materials_${farmId}`;
@@ -125,8 +130,41 @@ export function MaterialListChecklist({
   };
   if (!materials || materials.length === 0) {
     return (
-      <div className="p-6 rounded-2xl bg-slate-950/60 border border-slate-800 text-center text-xs text-slate-400">
-        No materials listed for this farm yet.
+      <div className="p-5 sm:p-6 rounded-2xl bg-amber-950/20 border border-amber-500/30 text-slate-200 space-y-4">
+        <div className="flex items-start gap-3">
+          <AlertCircle className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
+          <div className="space-y-1">
+            <h4 className="text-sm font-semibold text-amber-300">
+              No Material List Available
+            </h4>
+            <p className="text-xs text-slate-300 leading-relaxed">
+              This farm doesn&apos;t have a material list provided yet. Create a ticket in Discord to request it, or watch the video tutorial for required items and building steps.
+            </p>
+          </div>
+        </div>
+
+        <div className="flex flex-wrap items-center gap-2.5 pt-1">
+          <a
+            href="https://discord.gg/theysix"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 px-3.5 py-2 rounded-xl bg-[#5865F2] hover:bg-[#4752C4] text-white text-xs font-bold transition-all shadow-sm"
+          >
+            <MessageSquarePlus className="w-4 h-4" />
+            <span>Open Discord Ticket</span>
+          </a>
+          {youtubeUrl && (
+            <a
+              href={youtubeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-3.5 py-2 rounded-xl bg-red-600/20 hover:bg-red-600/30 text-red-300 border border-red-500/30 text-xs font-bold transition-all"
+            >
+              <Youtube className="w-4 h-4 text-red-400" />
+              <span>Watch Video Tutorial</span>
+            </a>
+          )}
+        </div>
       </div>
     );
   }

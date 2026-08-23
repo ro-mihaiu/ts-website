@@ -111,9 +111,29 @@ export function FarmDetailView({ farm, relatedFarms }: FarmDetailViewProps) {
                   src={farm.resolvedThumbnail}
                   alt={farm.title}
                   fill
-                  className="object-cover"
+                  className="object-cover opacity-60 filter blur-[2px] scale-105"
                   unoptimized={farm.resolvedThumbnail.startsWith("http")}
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-slate-950/40 flex flex-col items-center justify-center p-6 text-center">
+                  <div className="p-3 rounded-2xl bg-red-600/20 border border-red-500/30 text-red-400 mb-3 shadow-lg">
+                    <Youtube className="w-8 h-8" />
+                  </div>
+                  <h3 className="text-base sm:text-lg font-bold text-white mb-1">
+                    No Video Tutorial Linked
+                  </h3>
+                  <p className="text-xs sm:text-sm text-slate-300 max-w-md mb-4 leading-relaxed">
+                    This farm blueprint does not have a video tutorial link provided yet. Create a ticket in our Discord to update or link the video.
+                  </p>
+                  <a
+                    href="https://discord.gg/theysix"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#5865F2] hover:bg-[#4752C4] text-white text-xs font-bold transition-all shadow-md shadow-indigo-950/50"
+                  >
+                    <MessageSquarePlus className="w-4 h-4" />
+                    <span>Open Ticket in Discord</span>
+                  </a>
+                </div>
               </div>
             )}
           </div>
@@ -160,7 +180,7 @@ export function FarmDetailView({ farm, relatedFarms }: FarmDetailViewProps) {
           </div>
 
           {/* Interactive Material List & Checklist (Track items in-game) */}
-          {farm.materials && farm.materials.length > 0 && (
+          {farm.materials && farm.materials.length > 0 ? (
             <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-slate-800 space-y-4">
               <div className="flex items-center justify-between border-b border-slate-800 pb-3">
                 <h3 className="text-lg font-bold text-white flex items-center gap-2">
@@ -180,7 +200,60 @@ export function FarmDetailView({ farm, relatedFarms }: FarmDetailViewProps) {
                 materials={farm.materials}
                 farmId={farm.dn}
                 farmTitle={farm.title}
+                youtubeUrl={farm.youtubeUrl}
               />
+            </div>
+          ) : (
+            <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-amber-500/20 bg-amber-950/10 space-y-4">
+              <div className="flex items-center justify-between border-b border-amber-500/20 pb-3">
+                <h3 className="text-lg font-bold text-white flex items-center gap-2">
+                  <span className="p-1.5 rounded-lg bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                    <Boxes className="w-4 h-4" />
+                  </span>
+                  <span>Material List & In-Game Checklist</span>
+                </h3>
+                <span className="text-xs text-amber-400/80 font-mono">
+                  Not Provided
+                </span>
+              </div>
+
+              {/* Missing Material List Notice with Discord Ticket Button & Video Tutorial Link */}
+              <div className="p-4 rounded-2xl bg-amber-950/30 border border-amber-500/30 text-slate-200 space-y-3">
+                <div className="flex items-start gap-2.5">
+                  <AlertCircle className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
+                  <div className="space-y-1">
+                    <p className="text-sm font-semibold text-amber-300">
+                      No Material List Provided
+                    </p>
+                    <p className="text-xs text-slate-300 leading-relaxed">
+                      This farm doesn&apos;t have a material list provided yet. Create a ticket in Discord and ask nicely for the material list to be added, or watch the video tutorial to see what items you need.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap items-center gap-2.5 pt-1">
+                  <a
+                    href="https://discord.gg/theysix"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 py-2 px-3.5 rounded-xl bg-[#5865F2] hover:bg-[#4752C4] text-white text-xs font-bold transition-all shadow-sm"
+                  >
+                    <MessageSquarePlus className="w-4 h-4" />
+                    <span>Open Discord Ticket</span>
+                  </a>
+                  {farm.hasYoutube && farm.youtubeUrl && (
+                    <a
+                      href={farm.youtubeUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 py-2 px-3.5 rounded-xl bg-red-600/20 hover:bg-red-600/30 text-red-300 border border-red-500/30 text-xs font-bold transition-all"
+                    >
+                      <Youtube className="w-4 h-4 text-red-400" />
+                      <span>Watch Video Tutorial</span>
+                    </a>
+                  )}
+                </div>
+              </div>
             </div>
           )}
         </div>
@@ -297,7 +370,7 @@ export function FarmDetailView({ farm, relatedFarms }: FarmDetailViewProps) {
               )}
 
               {/* YouTube Tutorial Link */}
-              {farm.youtubeUrl && (
+              {farm.hasYoutube && farm.youtubeUrl ? (
                 <a
                   href={farm.youtubeUrl}
                   target="_blank"
@@ -315,6 +388,25 @@ export function FarmDetailView({ farm, relatedFarms }: FarmDetailViewProps) {
                   </div>
                   <ExternalLink className="w-4 h-4 opacity-80" />
                 </a>
+              ) : (
+                /* Missing YouTube Video Notice with Discord Ticket Button */
+                <div className="p-4 rounded-2xl bg-red-950/20 border border-red-800/30 text-slate-200 space-y-3">
+                  <div className="flex items-start gap-2.5">
+                    <AlertCircle className="w-5 h-5 text-red-400 shrink-0 mt-0.5" />
+                    <p className="text-xs leading-relaxed">
+                      This farm doesn&apos;t have a video link provided, create a ticket in Discord to update or request the video link.
+                    </p>
+                  </div>
+                  <a
+                    href="https://discord.gg/theysix"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 w-full py-2 px-3 rounded-xl bg-[#5865F2] hover:bg-[#4752C4] text-white text-xs font-bold transition-all shadow-sm"
+                  >
+                    <MessageSquarePlus className="w-4 h-4" />
+                    <span>Open Discord Ticket</span>
+                  </a>
+                </div>
               )}
             </div>
 
