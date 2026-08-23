@@ -35,6 +35,6 @@ yarn-error.log*
 *.tsbuildinfo
 
 # file list
-world.md
+worlds.md
 schematics.md
 /Videos_export
