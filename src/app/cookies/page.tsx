@@ -53,6 +53,13 @@ export default function CookiesPage() {
                 Our farm pages embed official YouTube tutorials. When you interact with YouTube video embeds, Google/YouTube may set cookies according to their Privacy Policy.
               </p>
             </div>
+
+            <div className="p-4 rounded-2xl bg-slate-950/80 border border-slate-800 space-y-1.5">
+              <h3 className="font-bold text-cyan-400">Analytics & Performance</h3>
+              <p className="text-xs text-slate-400">
+                We use Vercel Analytics for page-view and traffic measurement and Vercel Speed Insights for anonymous performance metrics. These tools are designed to work without advertising cookies and do not use your data to build an advertising profile.
+              </p>
+            </div>
           </div>
         </section>
 
@@ -61,7 +68,7 @@ export default function CookiesPage() {
             3. Managing Your Preferences
           </h2>
           <p>
-            You can modify your browser settings to reject cookies or notify you when a cookie is placed. Note that disabling essential cookies may impact certain interface filters and theme preferences.
+            You can modify your browser settings to reject cookies or notify you when a cookie is placed. The Essential Only option prevents optional consent while retaining local storage needed for the site interface. Vercel Analytics and Speed Insights are separate, cookie-free measurement services and do not depend on this preference.
           </p>
         </section>
 

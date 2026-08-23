@@ -29,26 +29,33 @@ export default function PrivacyPolicyPage() {
         <section className="space-y-3">
           <h2 className="text-xl font-bold text-white">1. Information We Do Not Collect</h2>
           <p>
-            TheySix is committed to protecting your privacy. We do not require accounts, sign-ups, or credit cards to browse farm blueprints and download world or schematic files.
+            TheySix is committed to protecting your privacy. We do not require accounts, sign-ups, or credit cards to browse farm blueprints and download world or schematic files. We do not sell personal information or use advertising profiles.
           </p>
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-xl font-bold text-white">2. External Links & Third-Party Services</h2>
+          <h2 className="text-xl font-bold text-white">2. Analytics & Performance Measurement</h2>
+          <p>
+            We use Vercel Analytics to measure page views and general site traffic, and Vercel Speed Insights to measure anonymous performance information such as page-load and responsiveness metrics. These services help us understand how the site is used and improve its reliability. They are designed to operate without advertising cookies and are not used to identify you by name.
+          </p>
+        </section>
+
+        <section className="space-y-3">
+          <h2 className="text-xl font-bold text-white">3. External Links & Third-Party Services</h2>
           <p>
             Our website links to third-party services such as YouTube, Discord, TikTok, Instagram, and X (Twitter). When clicking external links, your interactions are governed by their respective privacy policies.
           </p>
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-xl font-bold text-white">3. Local Storage</h2>
+          <h2 className="text-xl font-bold text-white">4. Local Storage</h2>
           <p>
             We use browser <code>localStorage</code> purely to remember your UI preferences (such as filtering by Java or Bedrock, and acknowledging cookie notifications).
           </p>
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-xl font-bold text-white">4. Contacting Us</h2>
+          <h2 className="text-xl font-bold text-white">5. Contacting Us</h2>
           <p>
             If you have questions about our privacy practices, contact us via Discord or our contact channels on the{" "}
             <Link href="/socials" className="text-cyan-400 hover:underline">
