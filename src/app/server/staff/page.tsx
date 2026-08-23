@@ -54,7 +54,7 @@ const staffMembers = [
   },
   {
     name: "Talha",
-    ign: "Talha",
+    ign: "OnyxTrace",
     role: "Early Tester & Manager",
     department: "Testing",
     icon: Sparkles,
@@ -62,6 +62,17 @@ const staffMembers = [
     avatar: "/logo.gif",
     bio: "Tests new features, provides feedback, and helps manage the testing process.",
     discord: "@talhamolla_77",
+  },
+  {
+    name: "Satan",
+    ign: "itz_sitian",
+    role: "Early Tester & Helper",
+    department: "Testing",
+    icon: Sparkles,
+    badgeColor: "bg-violet-500/20 text-violet-300 border-violet-500/40",
+    avatar: "/logo.gif",
+    bio: "Tests new features, provides feedback, and helps manage the testing process.",
+    discord: "@itz_sitian",
   },
   /*{
     name: "Head Moderator",
