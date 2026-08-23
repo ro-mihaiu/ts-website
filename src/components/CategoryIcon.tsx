@@ -1,6 +1,7 @@
 import React from "react";
-import { Coffee, Box } from "lucide-react";
+import { Box } from "lucide-react";
 import type { FarmCategory } from "@/types/farm";
+import { JavaBrandIcon } from "@/components/JavaBrandIcon";
 
 interface IconProps extends React.SVGProps<SVGSVGElement> {
   className?: string;
@@ -8,10 +9,10 @@ interface IconProps extends React.SVGProps<SVGSVGElement> {
 }
 
 /**
- * Relevant icon for Java Edition (Coffee cup)
+ * Relevant icon for Java Edition.
  */
 export function JavaIcon({ className = "w-4 h-4", ...props }: IconProps) {
-  return <Coffee className={className} {...props} />;
+  return <JavaBrandIcon className={className} {...props} />;
 }
 
 /**

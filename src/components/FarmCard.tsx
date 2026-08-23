@@ -1,8 +1,9 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Download, FileCode, Youtube, Coffee, Box, ArrowUpRight, Gauge } from "lucide-react";
+import { Download, FileCode, Youtube, Box, ArrowUpRight, Gauge, Hammer } from "lucide-react";
 import { RealViewsCount } from "@/components/RealViewsCount";
+import { JavaBrandIcon } from "@/components/JavaBrandIcon";
 import type { FarmWithMetadata } from "@/types/farm";
 
 interface FarmCardProps {
@@ -11,6 +12,7 @@ interface FarmCardProps {
 
 export function FarmCard({ farm }: FarmCardProps) {
   const isJava = farm.category === "java";
+  const isBuild = farm.category === "build";
   const farmUrl = `/farm/${farm.category}/${farm.dn}`;
 
   return (
@@ -29,9 +31,13 @@ export function FarmCard({ farm }: FarmCardProps) {
 
         {/* Edition Badge */}
         <div className="absolute top-3 left-3 flex items-center gap-1.5 z-10 flex-wrap max-w-[70%]">
-          {farm.supportsBothPlatforms ? (
+          {isBuild ? (
+            <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-bold tracking-wide uppercase font-mono shadow-md backdrop-blur-md bg-amber-400/90 text-slate-950">
+              <Hammer className="w-3 h-3" /> Builds
+            </span>
+          ) : farm.supportsBothPlatforms ? (
             <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-bold tracking-wide uppercase font-mono shadow-md backdrop-blur-md bg-slate-950/80 text-cyan-200 border border-cyan-400/40">
-              <Coffee className="w-3 h-3 text-[#9fff99]" />
+              <JavaBrandIcon size={12} />
               <Box className="w-3 h-3 text-slate-100" />
               Both Platforms
             </span>
@@ -43,7 +49,7 @@ export function FarmCard({ farm }: FarmCardProps) {
                   : "bg-white/15 text-slate-100 border border-slate-300/30 bg-slate-950/80"
               }`}
             >
-              {isJava ? <Coffee className="w-3 h-3" /> : <Box className="w-3 h-3" />}
+              {isJava ? <JavaBrandIcon size={12} /> : <Box className="w-3 h-3" />}
               {isJava ? "Java" : "Bedrock"}
             </span>
           )}
@@ -160,7 +166,7 @@ export function FarmCard({ farm }: FarmCardProps) {
           )}
 
           {/* Java Schematic Download / Preview Link */}
-          {isJava && (
+          {(isJava || isBuild) && (
             farm.hasSchematic && farm.schematicUrl ? (
               <a
                 href={farm.schematicUrl}

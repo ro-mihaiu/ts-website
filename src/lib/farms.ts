@@ -4,6 +4,76 @@ import type { FarmCategory, FarmData, FarmWithMetadata, FarmMaterialItem } from 
 
 export const BOTH_PLATFORMS_TAG = "Both Platforms";
 
+function parseBuildArchive(filePath: string, linkLabel: string): Map<string, string> {
+  const links = new Map<string, string>();
+  if (!fs.existsSync(filePath)) return links;
+
+  const content = fs.readFileSync(filePath, "utf-8");
+  const entries = content.split(/(?=📭DN\s*:\s*C\d+)/i);
+  for (const entry of entries) {
+    const dnMatch = entry.match(/DN\s*:\s*(C\d+)/i);
+    if (!dnMatch) continue;
+
+    const linkSection = entry.match(new RegExp(`${linkLabel}[\\s\\S]*?Link\\s*:\\s*(https?:\\/\\/\\S+)`, "i"));
+    if (linkSection) links.set(dnMatch[1].toUpperCase(), linkSection[1].trim());
+  }
+  return links;
+}
+
+function getBuildFarms(): FarmWithMetadata[] {
+  const root = process.cwd();
+  const schematicLinks = parseBuildArchive(path.join(root, "schematics.md"), "Schematic File Download Link");
+  const worldLinks = parseBuildArchive(path.join(root, "worlds.md"), "World File Download Link \\( Java \\)");
+  const fallbackWorldLinks = parseBuildArchive(path.join(root, "worlds.md"), "World File Download Link");
+  const videosPath = path.join(root, "Videos_export", "Videos.txt");
+  if (!fs.existsSync(videosPath)) return [];
+
+  const records = fs.readFileSync(videosPath, "utf-8").split(/\n#{20,}\n/);
+  const builds: FarmWithMetadata[] = [];
+  for (const record of records) {
+    const dnMatch = record.match(/Download Number[^:]*:\s*(C\d+)/i);
+    if (!dnMatch) continue;
+    const dn = dnMatch[1].toUpperCase();
+    const title = record.match(/^Title:\s*(.+)$/m)?.[1]?.trim() || `TheySix Minecraft Build ${dn}`;
+    const youtubeUrl = record.match(/^Video url:\s*(https?:\/\/\S+)$/m)?.[1]?.trim() || "";
+    const thumbnailUrl = record.match(/^Thumbnail url:\s*(https?:\/\/\S+)$/m)?.[1]?.trim() || "";
+    const date = record.match(/^Uploaded Time:\s*(.+)$/m)?.[1]?.trim() || "";
+    const description = record.match(/^Description:\s*([\s\S]*?)(?=^Tags \(in description\):|^Tags:|$)/m)?.[1]?.trim() || "Minecraft build tutorial by TheySix.";
+    const schematicUrl = schematicLinks.get(dn);
+    const worldDownloadUrl = worldLinks.get(dn) || fallbackWorldLinks.get(dn) || "link";
+
+    builds.push({
+      id: dn,
+      dn,
+      category: "build",
+      title,
+      farmType: "Build",
+      description,
+      worldDownloadUrl,
+      schematicUrl,
+      youtubeUrl,
+      version: "Java & Bedrock",
+      tags: ["Build", "Java & Bedrock"],
+      thumbnailUrl,
+      author: "TheySix",
+      date,
+      views: 0,
+      resolvedThumbnail: getThumbnailUrl(youtubeUrl, thumbnailUrl),
+      hasSchematic: Boolean(schematicUrl),
+      hasWorldDownload: worldDownloadUrl !== "link",
+      hasYoutube: Boolean(youtubeUrl),
+      hasMaterials: false,
+      normalizedDn: dn.toLowerCase(),
+      youtubeId: extractYouTubeId(youtubeUrl),
+      viewsDisplay: "Build",
+      schematicFiles: { litematic: `${dn}.litematic`, schematic: `${dn}.schematic`, schem: `${dn}.schem`, nbt: `${dn}.nbt` },
+      materials: [],
+      supportsBothPlatforms: true,
+    });
+  }
+  return builds;
+}
+
 export function farmSupportsBothPlatforms(tags?: string[]): boolean {
   if (!tags?.length) return false;
   return tags.some((t) =>
@@ -380,6 +450,8 @@ export function getAllFarms(): FarmWithMetadata[] {
       supportsBothPlatforms: farmSupportsBothPlatforms(parsedData.tags),
     });
   }
+
+  farms.push(...getBuildFarms());
 
   // Sort by featured first, then by date descending (newest first), then by dn descending
   return farms.sort((a, b) => {

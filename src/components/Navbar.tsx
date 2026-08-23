@@ -4,7 +4,12 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X, MessageSquare, Compass, Youtube, Coffee, Box, Server, Bot } from "lucide-react";
+import { Menu, X, MessageSquare, Compass, Youtube, Box, Server, Bot, Hammer } from "lucide-react";
+import { JavaBrandIcon } from "@/components/JavaBrandIcon";
+
+function JavaLogo({ className }: { className: string }) {
+  return <JavaBrandIcon size={20} className={className} />;
+}
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,8 +17,9 @@ export function Navbar() {
 
   const navLinks = [
     { href: "/", label: "All Farms", icon: Compass },
-    { href: "/?category=java", label: "Java Edition", icon: Coffee },
-    { href: "/?category=bedrock", label: "Bedrock Edition", icon: Box },
+    { href: "/?category=java#farms", label: "Java Edition", icon: JavaLogo },
+    { href: "/?category=bedrock#farms", label: "Bedrock Edition", icon: Box },
+    { href: "/?category=build", label: "Builds", icon: Hammer },
     { href: "/server", label: "Minecraft Server", icon: Server },
     { href: "/bot/about", label: "Discord Bot", icon: Bot },
     { href: "/socials", label: "Socials", icon: Youtube },
@@ -26,13 +32,7 @@ export function Navbar() {
           {/* Brand / Logo */}
           <Link href="/" className="flex items-center gap-3 group">
             <div className="relative w-10 h-10 sm:w-11 sm:h-11 rounded-lg overflow-hidden border border-slate-700 bg-slate-900 group-hover:border-cyan-500/60 transition-all shadow-md">
-              <Image
-                src="/logo.gif"
-                alt="TheySix Logo"
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-300"
-                unoptimized
-              />
+              <Image src="/logo.gif" alt="TheySix Logo" fill className="object-cover group-hover:scale-105 transition-transform duration-300" unoptimized />
             </div>
             <div className="flex flex-col">
               <span className="font-extrabold text-lg sm:text-xl tracking-tight text-white group-hover:text-cyan-400 transition-colors flex items-center gap-1.5">
@@ -43,7 +43,7 @@ export function Navbar() {
           </Link>
 
           {/* Desktop Nav Links */}
-          <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
+          <nav className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => {
               const Icon = link.icon;
               const isActive = pathname === link.href || (link.href === "/server" && pathname.startsWith("/server")) || (link.href === "/bot/about" && pathname.startsWith("/bot"));
@@ -92,7 +92,9 @@ export function Navbar() {
 
       {/* Mobile Drawer */}
       {isOpen && (
-        <div className="lg:hidden border-t border-slate-800 bg-slate-950 px-4 pt-2 pb-6 space-y-2">
+        <>
+          <button aria-label="Close navigation menu" onClick={() => setIsOpen(false)} className="fixed inset-0 top-16 z-40 bg-black/40 lg:hidden" />
+          <div className="absolute right-4 top-[calc(100%+0.5rem)] z-50 w-[min(20rem,calc(100vw-2rem))] rounded-2xl border border-slate-700 bg-slate-950/95 p-3 shadow-2xl shadow-black/40 backdrop-blur-xl lg:hidden">
           {navLinks.map((link) => {
             const Icon = link.icon;
             const isActive = pathname === link.href || (link.href === "/server" && pathname.startsWith("/server")) || (link.href === "/bot/about" && pathname.startsWith("/bot"));
@@ -123,7 +125,8 @@ export function Navbar() {
               Join our Discord Server
             </a>
           </div>
-        </div>
+          </div>
+        </>
       )}
     </header>
   );

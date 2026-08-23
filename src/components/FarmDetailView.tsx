@@ -7,7 +7,6 @@ import {
   Download,
   FileCode,
   Youtube,
-  Coffee,
   Box,
   Calendar,
   User,
@@ -21,12 +20,14 @@ import {
   MessageSquarePlus,
   Check,
   Copy,
-  Boxes
+  Boxes,
+  Hammer
 } from "lucide-react";
 import { FarmCard } from "@/components/FarmCard";
 import { SchematicPreviewModal } from "@/components/SchematicPreviewModal";
 import { RealViewsCount } from "@/components/RealViewsCount";
 import { MaterialListChecklist } from "@/components/MaterialListChecklist";
+import { JavaBrandIcon } from "@/components/JavaBrandIcon";
 import type { FarmWithMetadata } from "@/types/farm";
 
 interface FarmDetailViewProps {
@@ -39,6 +40,7 @@ export function FarmDetailView({ farm, relatedFarms }: FarmDetailViewProps) {
   const [copiedLink, setCopiedLink] = useState(false);
 
   const isJava = farm.category === "java";
+  const isBuild = farm.category === "build";
   const ytId = farm.youtubeId;
 
   const handleShare = () => {
@@ -58,20 +60,22 @@ export function FarmDetailView({ farm, relatedFarms }: FarmDetailViewProps) {
           className="inline-flex items-center gap-2 text-sm font-medium text-slate-400 hover:text-white transition-colors group"
         >
           <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-          <span>Back to {isJava ? "Java" : "Bedrock"} Farms</span>
+          <span>Back to {isBuild ? "Builds" : isJava ? "Java" : "Bedrock"} Farms</span>
         </Link>
 
         {/* Badges / Edition info */}
         <div className="flex items-center gap-2">
           <span
             className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-bold font-mono uppercase tracking-wide border shadow-sm ${
-              isJava
+              isBuild
+                ? "bg-amber-400/10 text-amber-300 border-amber-400/30"
+                : isJava
                 ? "bg-[#9fff99]/10 text-[#9fff99] border-[#9fff99]/30"
                 : "bg-white/10 text-slate-100 border-white/20"
             }`}
           >
-            {isJava ? <Coffee className="w-3.5 h-3.5" /> : <Box className="w-3.5 h-3.5" />}
-            {isJava ? "Minecraft Java" : "Minecraft Bedrock"}
+            {isBuild ? <Hammer className="w-3.5 h-3.5" /> : isJava ? <JavaBrandIcon size={14} /> : <Box className="w-3.5 h-3.5" />}
+            {isBuild ? "Minecraft Build" : isJava ? "Minecraft Java" : "Minecraft Bedrock"}
           </span>
 
           <span className="px-3 py-1 rounded-lg text-xs font-mono font-bold text-slate-300 bg-slate-900 border border-slate-800">
@@ -280,7 +284,7 @@ export function FarmDetailView({ farm, relatedFarms }: FarmDetailViewProps) {
                     <div className="text-left">
                       <div className="text-sm">World Download</div>
                       <div className="text-[11px] font-normal text-cyan-100 font-mono">
-                        {isJava ? ".rar world save" : ".mcworld save"}
+                        {isJava || isBuild ? ".rar world save" : ".mcworld save"}
                       </div>
                     </div>
                   </div>
@@ -308,7 +312,7 @@ export function FarmDetailView({ farm, relatedFarms }: FarmDetailViewProps) {
               )}
 
               {/* Java Schematic Handling */}
-              {isJava ? (
+              {isJava || isBuild ? (
                 farm.hasSchematic && farm.schematicUrl ? (
                   <div className="space-y-2">
                     {/* Schematic Download Button */}
@@ -462,7 +466,7 @@ export function FarmDetailView({ farm, relatedFarms }: FarmDetailViewProps) {
       {relatedFarms.length > 0 && (
         <div className="space-y-6 pt-12 border-t border-slate-800">
           <h2 className="text-2xl font-bold text-white tracking-tight">
-            More {isJava ? "Java" : "Bedrock"} Farm Blueprints
+            More {isBuild ? "Build" : isJava ? "Java" : "Bedrock"} Blueprints
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {relatedFarms.map((rf) => (
@@ -473,7 +477,7 @@ export function FarmDetailView({ farm, relatedFarms }: FarmDetailViewProps) {
       )}
 
       {/* Schematic Preview Modal */}
-      {isJava && (
+      {(isJava || isBuild) && (
         <SchematicPreviewModal
           farm={farm}
           isOpen={isPreviewOpen}

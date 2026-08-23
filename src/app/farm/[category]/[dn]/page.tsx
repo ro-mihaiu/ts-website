@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: FarmPageProps): Promise<Metad
     };
   }
 
-  const categoryName = farm.category === "java" ? "Java Edition" : "Bedrock Edition";
+  const categoryName = farm.category === "build" ? "Build" : farm.category === "java" ? "Java Edition" : "Bedrock Edition";
 
   return {
     title: `${farm.title} (${categoryName}) | TheySix Minecraft Farms`,

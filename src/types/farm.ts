@@ -1,4 +1,4 @@
-export type FarmCategory = "java" | "bedrock";
+export type FarmCategory = "java" | "bedrock" | "build";
 
 export const FARM_TYPES = [
   "Shulker",

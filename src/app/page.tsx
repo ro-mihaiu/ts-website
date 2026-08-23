@@ -3,7 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { getAllFarms } from "@/lib/farms";
 import { FarmGrid } from "@/components/FarmGrid";
-import { Sparkles, Coffee, Box, Download, Youtube, MessageSquare, ShieldCheck, FileCode } from "lucide-react";
+import { JavaBrandIcon } from "@/components/JavaBrandIcon";
+import { Sparkles, Box, Download, Youtube, MessageSquare, ShieldCheck, FileCode, Hammer } from "lucide-react";
 
 export const revalidate = 0; // Dynamic server evaluation
 
@@ -37,16 +38,22 @@ export default function HomePage() {
             {/* Quick Action CTA buttons */}
             <div className="flex flex-wrap items-center justify-center md:justify-start gap-3.5 pt-2">
               <Link
-                href="/?category=java"
+                href="/?category=java#farms"
                 className="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-[#9fff99] hover:bg-[#86efac] text-slate-950 font-bold text-sm shadow-lg shadow-[#9fff99]/20 transition-all hover:scale-[1.02]"
               >
-                <Coffee className="w-4 h-4" /> Java Farms
+                <JavaBrandIcon size={16} /> Java Farms
               </Link>
               <Link
-                href="/?category=bedrock"
+                href="/?category=bedrock#farms"
                 className="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-slate-100 hover:bg-white text-slate-950 font-bold text-sm shadow-lg shadow-white/20 transition-all hover:scale-[1.02]"
               >
                 <Box className="w-4 h-4" /> Bedrock Farms
+              </Link>
+              <Link
+                href="/?category=build#farms"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold text-sm shadow-lg shadow-amber-400/20 transition-all hover:scale-[1.02]"
+              >
+                <Hammer className="w-4 h-4" /> Builds
               </Link>
               <Link
                 href="/?category=both"
@@ -67,15 +74,8 @@ export default function HomePage() {
 
           {/* Hero Branding / Logo Preview */}
           <div className="shrink-0 relative">
-            <div className="relative w-44 h-44 sm:w-56 sm:h-56 rounded-3xl overflow-hidden border-2 border-cyan-500/30 shadow-2xl bg-slate-950/80 p-2 group">
-              <Image
-                src="/logo.gif"
-                alt="TheySix Logo"
-                fill
-                className="object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500"
-                priority
-                unoptimized
-              />
+            <div className="relative w-44 h-44 sm:w-56 sm:h-56 rounded-3xl overflow-hidden border-2 border-[#9fff99]/30 shadow-2xl bg-slate-950/80 p-2 group flex items-center justify-center">
+                <Image src="/logo.gif" alt="TheySix logo" fill className="object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500" priority unoptimized />
             </div>
           </div>
         </div>
@@ -102,7 +102,7 @@ export default function HomePage() {
       </section>
 
       {/* Farm Catalog Section */}
-      <section id="farms" className="space-y-6">
+      <section id="farms" className="scroll-mt-24 space-y-6">
         <div className="flex items-center justify-between">
           <div>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">

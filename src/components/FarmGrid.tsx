@@ -1,9 +1,11 @@
 "use client";
 
 import React, { useState, useMemo, useEffect } from "react";
+import Image from "next/image";
 import { useSearchParams, useRouter } from "next/navigation";
-import { Search, SlidersHorizontal, Coffee, Box, X, ChevronLeft, ChevronRight, Filter } from "lucide-react";
+import { Search, SlidersHorizontal, Box, X, ChevronLeft, ChevronRight, Filter, Hammer } from "lucide-react";
 import { FarmCard } from "@/components/FarmCard";
+import { JavaBrandIcon } from "@/components/JavaBrandIcon";
 import type { FarmWithMetadata } from "@/types/farm";
 
 import { FARM_TYPES } from "@/types/farm";
@@ -57,6 +59,8 @@ export function FarmGrid({ initialFarms }: FarmGridProps) {
     } else if (selectedCategory !== "all") {
       result = result.filter((farm) => {
         if (farm.category.toLowerCase() === selectedCategory.toLowerCase()) return true;
+        if (selectedCategory === "build") return false;
+        if (farm.category === "build") return false;
         return farm.supportsBothPlatforms;
       });
     }
@@ -164,6 +168,7 @@ export function FarmGrid({ initialFarms }: FarmGridProps) {
 
   const javaCount = initialFarms.filter((f) => f.category === "java").length;
   const bedrockCount = initialFarms.filter((f) => f.category === "bedrock").length;
+  const buildCount = initialFarms.filter((f) => f.category === "build").length;
   const bothCount = initialFarms.filter((f) => f.supportsBothPlatforms).length;
 
   const handleCategoryChange = (cat: string) => {
@@ -279,7 +284,7 @@ export function FarmGrid({ initialFarms }: FarmGridProps) {
                   : "bg-slate-900 text-slate-400 hover:text-white hover:bg-slate-800 border border-slate-800"
               }`}
             >
-              <Coffee className="w-3.5 h-3.5" />
+              <JavaBrandIcon size={14} />
               <span>Java Edition</span>
               <span className={`px-1.5 py-0.2 rounded text-[11px] font-mono ${selectedCategory === "java" ? "bg-black/20 text-slate-950 font-bold" : "bg-black/30"}`}>
                 {javaCount}
@@ -313,6 +318,17 @@ export function FarmGrid({ initialFarms }: FarmGridProps) {
               <span className={`px-1.5 py-0.2 rounded text-[11px] font-mono ${selectedCategory === "both" ? "bg-black/20 text-white font-bold" : "bg-black/30"}`}>
                 {bothCount}
               </span>
+            </button>
+
+            <button
+              onClick={() => handleCategoryChange("build")}
+              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 ${
+                selectedCategory === "build" ? "bg-amber-400 text-slate-950 shadow-lg shadow-amber-400/20" : "bg-slate-900 text-slate-400 hover:text-white hover:bg-slate-800 border border-slate-800"
+              }`}
+            >
+              <Hammer className="w-3.5 h-3.5" />
+              <span>Builds</span>
+              <span className="px-1.5 py-0.2 rounded bg-black/30 text-[11px] font-mono">{buildCount}</span>
             </button>
           </div>
 
