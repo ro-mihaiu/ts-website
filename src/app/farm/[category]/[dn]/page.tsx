@@ -42,6 +42,9 @@ export async function generateMetadata({ params }: FarmPageProps): Promise<Metad
   return {
     title: `${farm.title} (${categoryName}) | TheySix Minecraft Farms`,
     description: farm.description,
+    alternates: {
+      canonical: `/farm/${farm.category}/${farm.normalizedDn}`,
+    },
     openGraph: {
       title: `${farm.title} - TheySix Minecraft Farm`,
       description: farm.description,

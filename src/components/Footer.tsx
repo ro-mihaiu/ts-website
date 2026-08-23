@@ -19,6 +19,9 @@ export function Footer() {
             <p className="text-xs text-slate-400 leading-relaxed">
               Your primary hub for high-efficiency Minecraft Java & Bedrock farm schematics, world downloads, and video tutorials.
             </p>
+            <a href="mailto:theysixyt.business@gmail.com" className="inline-flex items-center gap-2 text-xs text-slate-300 hover:text-cyan-400 transition-colors">
+              theysixyt.business@gmail.com
+            </a>
             <div className="flex items-center gap-3 pt-2 text-slate-400">
               <a
                 href="https://www.youtube.com/@TheySix"
@@ -53,6 +56,11 @@ export function Footer() {
               <li>
                 <Link href="/?category=bedrock" className="hover:text-slate-200 transition-colors">
                   Bedrock Edition Farms
+                </Link>
+              </li>
+              <li>
+                <Link href="/about" className="hover:text-cyan-400 transition-colors">
+                  About & Contact
                 </Link>
               </li>
               <li>

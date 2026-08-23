@@ -1,0 +1,21 @@
+# TheySix
+
+> TheySix is a free Minecraft Java and Bedrock farm database with schematics, world downloads, and video tutorials.
+
+## Main sections
+
+- Homepage: https://theysix.ro-mihaiu.xyz/
+- About and contact: https://theysix.ro-mihaiu.xyz/about
+- Farm catalog: https://theysix.ro-mihaiu.xyz/?category=all
+- Official socials: https://theysix.ro-mihaiu.xyz/socials
+- Minecraft server: https://theysix.ro-mihaiu.xyz/server
+- Terms of Service: https://theysix.ro-mihaiu.xyz/tos
+- Privacy Policy: https://theysix.ro-mihaiu.xyz/privacy
+
+## Content
+
+Farm detail pages provide the edition, farm type, description, materials when available, video tutorial, and available download links. Downloads are provided for personal Minecraft gameplay and educational use. TheySix is not affiliated with Mojang or Microsoft.
+
+## Contact
+
+For important issues, use https://discord.ro-mihaiu.xyz. Business inquiries can be sent to theysixyt.business@gmail.com.

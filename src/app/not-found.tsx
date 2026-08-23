@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import { Compass, Home, Search, AlertCircle } from "lucide-react";
+import { Compass, Home } from "lucide-react";
+import ReportIssueLink from "./components/ReportIssueLink";
 
 export default function NotFoundPage() {
   return (
@@ -33,6 +34,7 @@ export default function NotFoundPage() {
             <Compass className="w-4 h-4" /> Browse All Farms
           </Link>
         </div>
+        <ReportIssueLink />
       </div>
     </div>
   );

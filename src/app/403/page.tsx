@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { ShieldAlert, Home, Lock } from "lucide-react";
 import type { Metadata } from "next";
+import ReportIssueLink from "../components/ReportIssueLink";
 
 export const metadata: Metadata = {
   title: "403 Forbidden | TheySix",
@@ -35,6 +36,7 @@ export default function ForbiddenPage() {
             <Home className="w-4 h-4" /> Return to Safe Ground
           </Link>
         </div>
+        <ReportIssueLink />
       </div>
     </div>
   );

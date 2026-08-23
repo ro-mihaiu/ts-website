@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { ZapOff, RefreshCw, Home } from "lucide-react";
 import type { Metadata } from "next";
+import ReportIssueLink from "../components/ReportIssueLink";
 
 export const metadata: Metadata = {
   title: "503 Service Unavailable | TheySix",
@@ -43,6 +44,7 @@ export default function ServiceUnavailablePage() {
             Check Status on Discord
           </a>
         </div>
+        <ReportIssueLink />
       </div>
     </div>
   );

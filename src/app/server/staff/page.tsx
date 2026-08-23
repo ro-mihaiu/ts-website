@@ -30,7 +30,7 @@ const staffMembers = [
     bio: "Head technical architect, farm designer, content creator, and founder of the TheySix community.",
     discord: "@theysix",
   },
-  {
+  /*{
     name: "Redstone Lead",
     ign: "RedstoneArch",
     role: "Lead Redstone Engineer",
@@ -40,19 +40,30 @@ const staffMembers = [
     avatar: "/logo.gif",
     bio: "Optimizes server tick-rates, verifies farm schematics, and manages the bedrock/java technical test realms.",
     discord: "@redstone_lead",
-  },
+  },*/
   {
-    name: "Dev Lead",
-    ign: "DevByte",
-    role: "Lead Systems Developer",
+    name: "Mihai",
+    ign: "Mihaitzuuu",
+    role: "Lead Developer & Manager",
     department: "Development",
     icon: Code,
     badgeColor: "bg-cyan-500/20 text-cyan-300 border-cyan-500/40",
     avatar: "/logo.gif",
     bio: "Maintains server backend plugins, database integrity, custom anti-cheat rules, and web integrations.",
-    discord: "@dev_theysix",
+    discord: "@ro_mihaiu",
   },
   {
+    name: "Talha",
+    ign: "Talha",
+    role: "Early Tester & Manager",
+    department: "Testing",
+    icon: Sparkles,
+    badgeColor: "bg-violet-500/20 text-violet-300 border-violet-500/40",
+    avatar: "/logo.gif",
+    bio: "Tests new features, provides feedback, and helps manage the testing process.",
+    discord: "@talhamolla_77",
+  },
+  /*{
     name: "Head Moderator",
     ign: "WardenGuard",
     role: "Head Community Moderator",
@@ -73,7 +84,7 @@ const staffMembers = [
     avatar: "/logo.gif",
     bio: "Designs spawn hubs, arena battlegrounds, event zones, and server aesthetic landscapes.",
     discord: "@craft_voxel",
-  },
+  },*/
 ];
 
 export default function ServerStaffPage() {
@@ -95,7 +106,11 @@ export default function ServerStaffPage() {
       {/* Staff Cards Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {staffMembers.map((member) => {
-          const Icon = member.icon;
+          const Icon = member.icon ?? Shield;
+          const badgeColor = member.badgeColor ?? "bg-slate-700/40 text-slate-200 border-slate-600/60";
+          const avatar = member.avatar ?? "/logo.gif";
+          const bio = member.bio ?? "Community team member helping keep the server friendly and active.";
+          const discord = member.discord ?? "N/A";
           return (
             <div
               key={member.name}
@@ -105,7 +120,7 @@ export default function ServerStaffPage() {
                 <div className="flex items-center gap-3.5">
                   <div className="relative w-12 h-12 rounded-2xl overflow-hidden border border-slate-700 bg-slate-950 shadow-md">
                     <Image
-                      src={member.avatar}
+                      src={avatar}
                       alt={member.name}
                       fill
                       className="object-cover"
@@ -123,19 +138,19 @@ export default function ServerStaffPage() {
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <span className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-semibold font-mono border ${member.badgeColor}`}>
+                  <span className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-semibold font-mono border ${badgeColor}`}>
                     <Icon className="w-3.5 h-3.5" />
                     {member.role}
                   </span>
                 </div>
 
                 <p className="text-xs text-slate-300 leading-relaxed">
-                  {member.bio}
+                  {bio}
                 </p>
               </div>
 
               <div className="pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
-                <span className="font-mono text-slate-400">Discord: {member.discord}</span>
+                <span className="font-mono text-slate-400">Discord: {discord}</span>
                 <a
                   href="https://discord.gg/theysix"
                   target="_blank"

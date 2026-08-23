@@ -22,6 +22,9 @@ export const metadata: Metadata = {
     "Raid Farm"
   ],
   authors: [{ name: "TheySix" }],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "TheySix - Minecraft Farm Vault",
     description: "Download high-efficiency Minecraft Java & Bedrock farm schematics and world saves.",
