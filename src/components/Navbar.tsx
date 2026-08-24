@@ -33,6 +33,8 @@ export function Navbar() {
     { href: "/socials", label: "Socials", icon: Youtube },
     { href: "/about", label: "About", icon: BookOpen },
   ];
+  const socialsLink = baseLinks[0];
+  const aboutLink = baseLinks[1];
 
   const isFarmsActive = pathname === "/";
   const isExtrasActive = pathname.startsWith("/server") || pathname.startsWith("/bot");
@@ -179,30 +181,6 @@ export function Navbar() {
         <>
           <button aria-label="Close navigation menu" onClick={() => setIsOpen(false)} className="fixed inset-0 top-16 z-40 bg-black/40 lg:hidden" />
           <div className="absolute right-4 top-[calc(100%+0.5rem)] z-50 w-[min(20rem,calc(100vw-2rem))] rounded-2xl border border-slate-700 bg-slate-950/95 p-3 shadow-2xl shadow-black/40 backdrop-blur-xl lg:hidden">
-          {baseLinks.map((link) => {
-            const Icon = link.icon;
-            const isActive = pathname === link.href;
-            return (
-              <Link
-                key={link.label}
-                href={link.href}
-                onClick={() => {
-                  setIsOpen(false);
-                  setIsMobileFarmsOpen(false);
-                  setIsMobileExtrasOpen(false);
-                }}
-                className={`flex items-center gap-3 px-4 py-2.5 rounded-lg text-base font-medium transition-colors ${
-                  isActive
-                    ? "bg-slate-800 text-cyan-400 border border-slate-700"
-                    : "text-slate-300 hover:text-white hover:bg-slate-800/60"
-                }`}
-              >
-                <Icon className="w-5 h-5" />
-                {link.label}
-              </Link>
-            );
-          })}
-
           <div className="mt-1">
             <button
               type="button"
@@ -283,6 +261,40 @@ export function Navbar() {
               </div>
             )}
           </div>
+
+          <Link
+            href={socialsLink.href}
+            onClick={() => {
+              setIsOpen(false);
+              setIsMobileFarmsOpen(false);
+              setIsMobileExtrasOpen(false);
+            }}
+            className={`mt-1 flex items-center gap-3 px-4 py-2.5 rounded-lg text-base font-medium transition-colors ${
+              pathname === socialsLink.href
+                ? "bg-slate-800 text-cyan-400 border border-slate-700"
+                : "text-slate-300 hover:text-white hover:bg-slate-800/60"
+            }`}
+          >
+            <Youtube className="w-5 h-5" />
+            {socialsLink.label}
+          </Link>
+
+          <Link
+            href={aboutLink.href}
+            onClick={() => {
+              setIsOpen(false);
+              setIsMobileFarmsOpen(false);
+              setIsMobileExtrasOpen(false);
+            }}
+            className={`mt-1 flex items-center gap-3 px-4 py-2.5 rounded-lg text-base font-medium transition-colors ${
+              pathname === aboutLink.href
+                ? "bg-slate-800 text-cyan-400 border border-slate-700"
+                : "text-slate-300 hover:text-white hover:bg-slate-800/60"
+            }`}
+          >
+            <BookOpen className="w-5 h-5" />
+            {aboutLink.label}
+          </Link>
 
           <div className="pt-2">
             <a

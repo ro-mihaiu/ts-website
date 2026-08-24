@@ -7,7 +7,7 @@ export function Footer() {
   return (
     <footer className="border-t border-slate-800/80 bg-slate-950 text-slate-400 mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Brand Col */}
           <div className="space-y-4 md:col-span-1">
             <Link href="/" className="flex items-center gap-3">
@@ -44,8 +44,120 @@ export function Footer() {
             </div>
           </div>
 
+          {/* Mobile + Tablet Accordions */}
+          <div className="lg:hidden space-y-3">
+            <details className="group rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+              <summary className="cursor-pointer list-none text-xs font-bold text-slate-200 tracking-wider uppercase font-mono flex items-center justify-between">
+                <span>Farms & Community</span>
+                <span className="text-slate-500 transition-transform group-open:rotate-180">▾</span>
+              </summary>
+              <ul className="space-y-2 text-sm mt-3">
+                <li>
+                  <Link href="/?category=java" className="hover:text-[#9fff99] transition-colors">
+                    Java Edition Farms
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/?category=bedrock" className="hover:text-slate-200 transition-colors">
+                    Bedrock Edition Farms
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/about" className="hover:text-cyan-400 transition-colors">
+                    About & Contact
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/server/about" className="hover:text-amber-400 transition-colors">
+                    Minecraft Server
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/bot/about" className="hover:text-cyan-400 transition-colors">
+                    TheySix Helper (Discord Bot)
+                  </Link>
+                </li>
+              </ul>
+            </details>
+
+            <details className="group rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+              <summary className="cursor-pointer list-none text-xs font-bold text-slate-200 tracking-wider uppercase font-mono flex items-center justify-between">
+                <span>Socials</span>
+                <span className="text-slate-500 transition-transform group-open:rotate-180">▾</span>
+              </summary>
+              <ul className="space-y-2 text-sm mt-3">
+                <li>
+                  <a
+                    href="https://www.youtube.com/@TheySix"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between hover:text-red-400 transition-colors"
+                  >
+                    <span>YouTube (Java)</span>
+                    <ExternalLink className="w-3.5 h-3.5 opacity-60" />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.youtube.com/@TheySixMC"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between hover:text-red-400 transition-colors"
+                  >
+                    <span>YouTube (Bedrock)</span>
+                    <ExternalLink className="w-3.5 h-3.5 opacity-60" />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.youtube.com/@TheySixCreations"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between hover:text-amber-400 transition-colors"
+                  >
+                    <span>YouTube (Minecraft Builds)</span>
+                    <ExternalLink className="w-3.5 h-3.5 opacity-60" />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://discord.gg/theysix"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between hover:text-[#5865F2] transition-colors"
+                  >
+                    <span>Discord Community</span>
+                    <ExternalLink className="w-3.5 h-3.5 opacity-60" />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://x.com/TheySixYT"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between hover:text-sky-400 transition-colors"
+                  >
+                    <span>X (Twitter)</span>
+                    <ExternalLink className="w-3.5 h-3.5 opacity-60" />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.instagram.com/theysixyt/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between hover:text-pink-400 transition-colors"
+                  >
+                    <span>Instagram</span>
+                    <ExternalLink className="w-3.5 h-3.5 opacity-60" />
+                  </a>
+                </li>
+              </ul>
+            </details>
+          </div>
+
           {/* Editions & Navigation */}
-          <div className="space-y-3">
+          <div className="hidden lg:block space-y-3">
             <h3 className="text-xs font-bold text-slate-200 tracking-wider uppercase font-mono">Farms & Community</h3>
             <ul className="space-y-2 text-sm">
               <li>
@@ -109,7 +221,7 @@ export function Footer() {
           </div>
 
           {/* Social Links Col */}
-          <div className="space-y-3">
+          <div className="hidden lg:block space-y-3">
             <h3 className="text-xs font-bold text-slate-200 tracking-wider uppercase font-mono">TheySix Socials</h3>
             <ul className="space-y-2 text-sm">
               <li>

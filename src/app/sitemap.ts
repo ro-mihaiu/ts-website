@@ -7,7 +7,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
     "", "/about", "/socials", "/server", "/server/about", "/server/events",
     "/server/rules", "/server/staff", "/bot/about", "/bot/commands", "/bot/terms",
-    "/bot/tos", "/cookies", "/privacy", "/terms", "/tos",
+    "/bot/tos", "/cookies", "/privacy", "/terms", "/tos", "/staff", "/staff/retired",
+    "/tricks/java", "/tricks/bedrock",
   ];
 
   const routes = staticRoutes.map((route) => ({
