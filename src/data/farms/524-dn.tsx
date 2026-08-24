@@ -5,7 +5,7 @@ export const farm: FarmData = {
   title: "1,200 In 5 Minute! BEST IRON Farm in Minecraft 1.21/26.2+",
   farmType: "Iron",
   description: "Comprehensive Minecraft Java tutorial and build blueprint for 1,200 In 5 Minute! BEST IRON Farm in Minecraft 1.21/26.2+. Designed by TheySix for high efficiency, reliability, and ease of construction in survival mode.",
-  worldDownloadUrl: "link",
+  worldDownloadUrl: "https://www.mediafire.com/file/dne8v48gwhkbwxu/TheySix+-+IF+XMC+V1.rar/file",
   youtubeUrl: "https://www.youtube.com/watch?v=3FyCG3KBkfE",
   version: "1.21/26.2++",
   rates: "1.2k In 5 Min",

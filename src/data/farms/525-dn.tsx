@@ -5,7 +5,7 @@ export const farm: FarmData = {
   title: "22,000 in 10 Minutes! BEST MOB XP Farm for Minecraft 1.21/26.2+!",
   farmType: "XP",
   description: "Comprehensive Minecraft Java tutorial and build blueprint for 22,000 in 10 Minutes! BEST MOB XP Farm for Minecraft 1.21/26.2+!. Designed by TheySix for high efficiency, reliability, and ease of construction in survival mode.",
-  worldDownloadUrl: "link",
+  worldDownloadUrl: "https://www.mediafire.com/file_premium/f8dac5qjdj8ydox/TheySix_-_MB_NXzV1.zip/file",
   youtubeUrl: "https://www.youtube.com/watch?v=7-OktTXXzS4",
   version: "1.21/26.2++",
   rates: "22k in 10 Min",

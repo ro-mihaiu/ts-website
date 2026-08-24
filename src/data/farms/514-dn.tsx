@@ -5,7 +5,7 @@ export const farm: FarmData = {
   title: "TheySix Special Farm Build 1.21+",
   farmType: "Build",
   description: "Comprehensive Minecraft Java tutorial and build blueprint for TheySix Special Farm Build 1.21+. Designed by TheySix for high efficiency, reliability, and ease of construction in survival mode.",
-  worldDownloadUrl: "link",
+  worldDownloadUrl: "https://www.mediafire.com/file/hob9xu976vg0zyo/TheySix+-+IFX+V1+C.rar/file",
   youtubeUrl: "https://www.youtube.com/watch?v=596-VXFEaLI",
   version: "1.21++",
   rates: "472 Iron Ingots an hour",
