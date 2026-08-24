@@ -6,7 +6,7 @@ export const farm: FarmData = {
   farmType: "Mob",
   description: "Comprehensive Minecraft Java tutorial and build blueprint for 15,000 in 15 Minutes! BEST New MOB Farm for Minecraft 1.21/26.1+!. Designed by TheySix for high efficiency, reliability, and ease of construction in survival mode.",
   worldDownloadUrl: "https://www.mediafire.com/file/bibwuvpe8hj3ien/TheySix+-+MBFX+V1C.rar/file",
-  youtubeUrl: "",
+  youtubeUrl: "https://youtu.be/s0SYdMsBO5g?si=3AoDc-8CGLGldP5n",
   version: "1.21/26.1++",
   rates: "15k in 15 Min",
   difficulty: "Easy",
