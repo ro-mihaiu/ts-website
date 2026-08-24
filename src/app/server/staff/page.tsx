@@ -61,7 +61,7 @@ const staffMembers = [
     badgeColor: "bg-violet-500/20 text-violet-300 border-violet-500/40",
     avatar: "/logo.gif",
     bio: "Tests new features, provides feedback, and helps manage the testing process.",
-    discord: "@talhamolla_77",
+    discord: "@talhamolla_777",
   },
   {
     name: "Satan",
