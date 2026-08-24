@@ -5,7 +5,7 @@ export const farm: FarmData = {
   title: "30,000 Logs in 5 Mins! INSANE All Wood Farm for Minecraft 1.21/26.1+!",
   farmType: "Wood",
   description: "Comprehensive Minecraft Java tutorial and build blueprint for 30,000 Logs in 5 Mins! INSANE All Wood Farm for Minecraft 1.21/26.1+!. Designed by TheySix for high efficiency, reliability, and ease of construction in survival mode.",
-  worldDownloadUrl: "link",
+  worldDownloadUrl: "https://www.mediafire.com/file/etzio1cs1bdx5hf/TheySix+-+TFX+V2+ALX.rar/file",
   schematicUrl: "https://www.mediafire.com/file/au11otjb6dhsqd4/TheySix+-+TFX+V2+ALX.litematic/file",
   youtubeUrl: "https://www.youtube.com/watch?v=pZlVxwi-TnA",
   version: "1.21/26.1++",
