@@ -6,7 +6,7 @@ export const farm: FarmData = {
   farmType: "XP",
   description: "Comprehensive Minecraft Java tutorial and build blueprint for 39 Levels in 30 Seconds! INSANE XP Farm for Minecraft 1.21/26.1+!. Designed by TheySix for high efficiency, reliability, and ease of construction in survival mode.",
   worldDownloadUrl: "https://www.mediafire.com/file/o64sbd10pa315vq/TheySix+-+XE+XP+V1.rar/file",
-  youtubeUrl: "",
+  youtubeUrl: "https://youtu.be/3uzr8fLfjAc?si=fJEtKZ0DEv_cpxQV",
   version: "1.21/26.1++",
   rates: "39 Levels",
   difficulty: "Easy",
