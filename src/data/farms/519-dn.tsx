@@ -5,7 +5,7 @@ export const farm: FarmData = {
   title: "9,000 in 5 Minutes! BEST New CREEPER Farm for Minecraft 1.21/26.1+!",
   farmType: "Creeper",
   description: "Comprehensive Minecraft Java tutorial and build blueprint for 9,000 in 5 Minutes! BEST New CREEPER Farm for Minecraft 1.21/26.1+!. Designed by TheySix for high efficiency, reliability, and ease of construction in survival mode.",
-  worldDownloadUrl: "link",
+  worldDownloadUrl: "https://www.mediafire.com/file/crond7uhbrgubia/TheySix+-+MF+CXV1.rar/file",
   youtubeUrl: "https://www.youtube.com/watch?v=nCmn23rs-tY",
   version: "1.21/26.1++",
   rates: "9k in 5 Min",
