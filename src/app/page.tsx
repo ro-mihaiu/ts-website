@@ -8,8 +8,8 @@ import { Sparkles, Box, Download, Youtube, MessageSquare, ShieldCheck, FileCode,
 
 export const revalidate = 0; // Dynamic server evaluation
 
-export default function HomePage() {
-  const farms = getAllFarms();
+export default async function HomePage() {
+  const farms = await getAllFarms();
 
   return (
     <div className="space-y-12 sm:space-y-16">

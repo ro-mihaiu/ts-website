@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import type { FarmCategory, FarmData, FarmWithMetadata, FarmMaterialItem } from "@/types/farm";
+import { createClient } from "@/lib/supabase/server";
 
 export const BOTH_PLATFORMS_TAG = "Both Platforms";
 
@@ -332,7 +333,7 @@ function getAllFarmFiles(dirPath: string): string[] {
 /**
  * Load all farms from the `src/data/farms` directory
  */
-export function getAllFarms(): FarmWithMetadata[] {
+export function getLegacyFarms(): FarmWithMetadata[] {
   const farmsDir = path.join(process.cwd(), "src", "data", "farms");
   const filePaths = getAllFarmFiles(farmsDir);
 
@@ -467,11 +468,11 @@ export function getAllFarms(): FarmWithMetadata[] {
 /**
  * Find a farm by category ("java" or "bedrock") and dn slug (e.g. "111-dn", "111", "b111-dn", "b111")
  */
-export function getFarmByCategoryAndDn(
+export function getLegacyFarmByCategoryAndDn(
   category: string,
   dnParam: string
 ): FarmWithMetadata | undefined {
-  const allFarms = getAllFarms();
+  const allFarms = getLegacyFarms();
   const normalizedCategory = category.toLowerCase().trim();
   const normalizedParam = dnParam.toLowerCase().trim();
 
@@ -498,4 +499,118 @@ export function getFarmByCategoryAndDn(
     );
   });
 }
+
+type FarmRow = {
+  id: string;
+  dn: string;
+  title: string;
+  category: FarmCategory;
+  farm_type: string;
+  description: string;
+  detailed_description: string | null;
+  world_download_url: string;
+  schematic_url: string | null;
+  youtube_url: string;
+  version: string | null;
+  rates: string | null;
+  difficulty: FarmData["difficulty"] | null;
+  tags: string[];
+  thumbnail_url: string | null;
+  author: string | null;
+  date: string | null;
+  featured: boolean;
+  views: number;
+  materials: FarmMaterialItem[];
+  schematic_path: string | null;
+};
+
+function isSupabaseConfigured() {
+  return Boolean(process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY);
+}
+
+function normalizeDate(date?: string | null) {
+  return date || undefined;
+}
+
+function rowToFarm(row: FarmRow, schematicUrl?: string): FarmWithMetadata {
+  const rawWorld = row.world_download_url?.trim() || "link";
+  const worldDownloadUrl = rawWorld.includes("sites.google.com/view/theysixdownloads/home/") ? "link" : rawWorld;
+  const youtubeUrl = row.youtube_url?.trim() || "";
+  const actualSchematicUrl = schematicUrl || row.schematic_url || undefined;
+  const hasSchematic = Boolean(actualSchematicUrl && actualSchematicUrl !== "#" && actualSchematicUrl.toLowerCase() !== "link");
+  const calculatedViews = Number(row.views) || 0;
+  const materials = Array.isArray(row.materials) ? row.materials : [];
+  const normalizedDn = row.dn.replace(/-dn$/i, "").replace(/^b/i, "");
+
+  return {
+    id: row.id,
+    dn: row.dn,
+    title: row.title,
+    category: row.category,
+    farmType: row.farm_type,
+    description: row.description,
+    detailedDescription: row.detailed_description || undefined,
+    worldDownloadUrl,
+    schematicUrl: hasSchematic ? actualSchematicUrl : undefined,
+    youtubeUrl,
+    version: row.version || undefined,
+    rates: formatCompactRates(row.rates || ""),
+    difficulty: row.difficulty || undefined,
+    tags: row.tags || [],
+    thumbnailUrl: row.thumbnail_url || undefined,
+    author: row.author || undefined,
+    date: normalizeDate(row.date),
+    featured: row.featured,
+    views: calculatedViews,
+    materials,
+    resolvedThumbnail: getThumbnailUrl(youtubeUrl, row.thumbnail_url || undefined),
+    hasSchematic,
+    hasWorldDownload: Boolean(worldDownloadUrl && worldDownloadUrl !== "#" && worldDownloadUrl.toLowerCase() !== "link"),
+    hasYoutube: Boolean(youtubeUrl && youtubeUrl !== "#" && youtubeUrl.toLowerCase() !== "link"),
+    hasMaterials: materials.length > 0,
+    normalizedDn,
+    youtubeId: extractYouTubeId(youtubeUrl),
+    viewsDisplay: formatCompactNumber(calculatedViews),
+    schematicFiles: {
+      litematic: `${row.dn}.litematic`,
+      schematic: `${row.dn}.schematic`,
+      schem: `${row.dn}.schem`,
+      nbt: `${row.dn}.nbt`,
+    },
+    supportsBothPlatforms: farmSupportsBothPlatforms(row.tags),
+  };
+}
+
+export async function getAllFarms(): Promise<FarmWithMetadata[]> {
+  if (!isSupabaseConfigured()) return getLegacyFarms();
+
+  const supabase = await createClient();
+  const { data, error } = await supabase.from("farms").select("*").order("featured", { ascending: false }).order("date", { ascending: false, nullsFirst: false }).order("dn", { ascending: false });
+  if (error) throw new Error(`Unable to load farms: ${error.message}`);
+
+  return (data as FarmRow[]).map((row) => {
+    const storageUrl = row.schematic_path
+      ? supabase.storage.from("schematics").getPublicUrl(row.schematic_path).data.publicUrl
+      : undefined;
+    return rowToFarm(row, storageUrl);
+  });
+}
+
+export async function getFarmByCategoryAndDn(category: string, dnParam: string): Promise<FarmWithMetadata | undefined> {
+  const allFarms = await getAllFarms();
+  const normalizedCategory = category.toLowerCase().trim();
+  const normalizedParam = dnParam.toLowerCase().trim();
+
+  return allFarms.find((farm) => {
+    if (farm.category.toLowerCase() !== normalizedCategory) return false;
+    const farmDn = farm.dn.toLowerCase();
+    const farmId = farm.id.toLowerCase();
+    const farmNorm = farm.normalizedDn.toLowerCase();
+    const paramWithoutDn = normalizedParam.replace(/-dn$/i, "");
+    const paramWithoutB = paramWithoutDn.replace(/^b/i, "");
+    return farmDn === normalizedParam || farmId === normalizedParam || farmNorm === normalizedParam || farmDn === `${normalizedParam}-dn` || farmNorm === paramWithoutB || farmDn === `b${normalizedParam}` || farmDn === `b${normalizedParam}-dn`;
+  });
+}
+
+export { rowToFarm };
 

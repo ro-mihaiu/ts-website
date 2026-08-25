@@ -12,7 +12,7 @@ interface FarmPageProps {
 }
 
 export async function generateStaticParams() {
-  const farms = getAllFarms();
+  const farms = await getAllFarms();
   const set = new Set<string>();
   const params: { category: string; dn: string }[] = [];
 
@@ -30,7 +30,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: FarmPageProps): Promise<Metadata> {
-  const farm = getFarmByCategoryAndDn(params.category, params.dn);
+  const farm = await getFarmByCategoryAndDn(params.category, params.dn);
   if (!farm) {
     return {
       title: "Farm Not Found | TheySix",
@@ -53,14 +53,14 @@ export async function generateMetadata({ params }: FarmPageProps): Promise<Metad
   };
 }
 
-export default function FarmDetailPage({ params }: FarmPageProps) {
-  const farm = getFarmByCategoryAndDn(params.category, params.dn);
+export default async function FarmDetailPage({ params }: FarmPageProps) {
+  const farm = await getFarmByCategoryAndDn(params.category, params.dn);
 
   if (!farm) {
     notFound();
   }
 
-  const allFarms = getAllFarms();
+  const allFarms = await getAllFarms();
 
   // Find related farms (same category or farmType, excluding current)
   const relatedFarms = allFarms

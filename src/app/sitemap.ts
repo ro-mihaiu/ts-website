@@ -3,7 +3,7 @@ import { getAllFarms } from "@/lib/farms";
 
 const siteUrl = "https://theysix.ro-mihaiu.xyz";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes = [
     "", "/about", "/socials", "/server", "/server/about", "/server/events",
     "/server/rules", "/server/staff", "/bot/about", "/bot/commands", "/bot/terms",
@@ -18,7 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: route === "" ? 1 : 0.7,
   }));
 
-  const farmRoutes = getAllFarms().map((farm) => ({
+  const farmRoutes = (await getAllFarms()).map((farm) => ({
     url: `${siteUrl}/farm/${farm.category}/${farm.normalizedDn}`,
     lastModified: farm.date ? new Date(farm.date) : new Date(),
     changeFrequency: "monthly" as const,
